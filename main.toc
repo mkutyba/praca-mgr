@@ -1,0 +1,13 @@
+\select@language {polish}
+\select@language {english}
+\select@language {polish}
+\select@language {english}
+\select@language {polish}
+\contentsline {chapter}{Rozdzia\l \ 1\relax .\kern .5em Wst\k ep}{1}{section*.2}
+\contentsline {section}{\numberline {1.1\relax .\kern .5em }Cel pracy}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2\relax .\kern .5em }Zwi\k azek z innymi pracami}{1}{section.1.2}
+\contentsline {chapter}{Rozdzia\l \ 2\relax .\kern .5em Drugi rozdzia\IeC {\l }}{7}{section*.3}
+\contentsline {chapter}{Spis ilustracji}{13}{section*.5}
+\contentsline {chapter}{Spis tabel}{15}{section*.7}
+\contentsline {chapter}{Bibliografia}{17}{section*.9}
+\contentsline {chapter}{Dodatek\ A\relax .\kern .5em Co\'s dodatkowego}{19}{section*.10}

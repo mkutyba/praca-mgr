@@ -1,0 +1,59 @@
+\documentclass[twoside]{iisthesis}
+\usepackage[MeX]{polski}
+\usepackage[cp1250]{inputenc}
+\usepackage{graphicx}
+
+% definicje kolorow
+\definecolor{ciemnoSzary}{rgb}{0.15,0.15,0.15}
+\definecolor{szary}{rgb}{0.5,0.5,0.5}
+\definecolor{jasnoSzary}{rgb}{0.2,0.2,0.2}
+
+\begin{document}
+
+% Zmiana domyœlnych angielskich nazw czêœci dokumentu na polskie "Rozdzia³y s¹ w klasie issthesis"
+% wstêpnie poprawione mo¿e ktoœ bêdzie zna³ lepszy sposób i wrzuci to do klasy issthesis.cls
+\renewcommand{\contentsname}{Spis treœci}
+\renewcommand{\appendixname}{Dodatek}
+\renewcommand{\listfigurename}{Spis ilustracji}
+\renewcommand{\listtablename}{Spis tabel}
+\renewcommand{\refname}{Bibliografia}
+\renewcommand{\abstractname}{Streszczenie}
+
+\title{Predykcja defektów na poziomie metod w celu zredukowania wysi³ku zwi¹zanego z zapewnieniem jakoœci oprogramowania}
+\author{Mateusz Kutyba}
+\advisor{dr hab. in¿. Lech Madeyski}
+\instituteLogo{logos/pwr}
+\slowaKluczowe{pierwsze\\drugie\\trzecie}
+
+\date{\number\the\year}
+
+% Wstawienie abstractu pracy
+\abstractSH{Bardzo krótkie streszczenie w którym powinno siê znaleŸæ omówienie tematu pracy i poruszanych terminów. Tekst ten nie mo¿e byæ zbyt d³ugi.}
+\abstractPL{Streszczenie po polsku}
+\abstractEN{Abctract in english}
+
+%spis treœci
+\maketitle
+\textpages
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Wstêp}
+\noindent
+	\input{chapters/1wstep}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Drugi rozdzia³}
+\noindent
+	\input{chapters/2rozdzial-drugi}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+\listoffigures
+\listoftables
+
+\bibliographystyle{iisthesis}
+\bibliography{bibliografia}
+
+\appendix
+\chapter{Coœ dodatkowego}
+\pagestyle{plain}
+
+\end{document}

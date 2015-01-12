@@ -111,8 +111,9 @@
 %
 % Delikatniejsze wypunktowania
 %
-\renewcommand{\labelitemi}{$\circ$}
-\renewcommand{\labelitemii}{$\cdot$}
+\renewcommand{\labelitemi}{$\bullet$}
+\renewcommand{\labelitemii}{$\circ$}
+\renewcommand{\labelitemiii}{$\cdot$}
 
 % Odstêp wypunktowania od tekstu
 \addtolength{\leftmargini}{3mm}

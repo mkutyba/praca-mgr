@@ -1,76 +1,62 @@
-	\noindent
-T³o: ró¿ne podejœcia do predykcji defektów, potrzeba gromadzenia danych z projektów.
+% T³o:
+Prawdopodobnie nie istniej¹ programy wolne od b³êdów. Z ca³¹ pewnoœci¹ istniej¹ programy, które zawieraj¹ zbyt du¿¹ liczbê b³êdów. Ka¿dy kto tworzy oprogramowanie chcia³by aby by³o ono wolne od wad. Podstawowym narzêdziem pozwalaj¹cym na sprawdzenie czy program dzia³a poprawnie s¹ testy. Powstaj¹ coraz bardziej wyszukane metody i metodyki testowania oprogramowania, a wszystko po to oprogramowanie dzia³a³o zgodnie z oczekiwaniami, czyli aby cechowa³o siê wysok¹ jakoœci¹. Testowanie i inspekcje kodu pozwalaj¹ zapewniæ odpowiedni¹ jakoœæ oprogramowania, ale s¹ kosztowne. Bazuj¹c na zasadzie Pareto \cite{endres2003handbook} wiemy, ¿e oko³o 80\% defektów pochodzi z 20\% modu³ów \cite{concas2011distribution}. Wiedz¹c, które modu³y nale¿y poddaæ inspekcji, mo¿na znacznie obni¿yæ iloœæ pracy potrzebn¹ do znalezienia wiêkszoœci b³êdów, a co za tym idzie znacz¹co zmniejszyæ koszt takich inspekcji.
 
-Motywacja: istniej¹ce modele skupiaj¹ siê na predykcji na poziomie klas, pakietów, plików. Przegl¹d kodu du¿ych projektów jest kosztowny.
+Kod Ÿród³owy oprogramowania zazwyczaj sk³ada siê z wielu plików, które s¹ organizowane w pakiety (ang. \textit{packages}). W jêzyku Java pliki zawieraj¹ klasy (ang. \textit{class}), a ka¿da klasa mo¿e zawieraæ metody (ang. \textit{method}). Powsta³o wiele metod predykcji defektów, na ró¿nych poziowach granulacji: od pakietów, przez pliki, klasy, metody, na pojedynczych zmianach (ang. \textit{hunk} \cite{ferzund2009empirical, ferzund2009software}) skoñczywszy \cite{hall2012systematic, catal2009systematic, d2010extensive, d2012evaluating}. Jak wykazano m.in. w \cite{giger2012method} i \cite{hata2012bug}, predykcja b³êdów na poziomie metod dostarcza dok³adniejszych danych na temat lokalizacji b³êdów, dziêki czemu ich odnajdywanie jest efektywniejsze.
 
-Dodatkowo gromadzenie danych z projektów jest czasoch³onne, wymaga du¿o pracy i pobierania projektów, potrzeba stworzenia uniwersalnych rozwi¹zañ s³u¿¹cych do tego celu oraz nastawienie na mo¿liwoœæ rozszerzania zestawu narzêdzi, które mog¹ byæ ze sob¹ dowolnie zestawiane
-
-
+Predykcja defektów oprogramowania wykorzystuje techniki eksploracji danych (ang. \textit{data mining}), g³ównie s¹ to metody statystyczne i metody uczenia maszynowego.
 
 
-	\section{Cel pracy}
-	\noindent
-Stworzenie wtyczek do Knime, s³u¿¹cych do wyliczania metryk procesu na podstawie danych z systemów kontroli wersji, zgromadzenie metryk z projektów Open Source w repozytorium.
+Aby znaleŸæ b³êdy w 
+Napisaæ krótko o metrykach oprogramowania i o znaczeniu dla predykcji.
 
-Za³o¿enia: wtyczki w œrodowisku Knime, wykorzystanie istniej¹cych rozwi¹zañ platformy DePress, systemy kontroli wersji: git, svn.
+%Motywacja:
+motywacja;
+gromadzenie danych (metryk) z projektów jest czasoch³onne, wymaga du¿o pracy i pobierania projektów, potrzeba stworzenia uniwersalnych rozwi¹zañ s³u¿¹cych do tego celu oraz nastawienie na mo¿liwoœæ rozszerzania zestawu narzêdzi, które mog¹ byæ ze sob¹ dowolnie zestawiane
 
-Ograniczenia zakresu tematycznego: badanie tylko projektów pisanych w Java
+Wstêpne przeszukiwanie literatury wykaza³o niewielk¹ iloœæ Ÿróde³ œciœle odpowiadaj¹cych zagadnieniu predykcji defektów na niskim poziomie granulacji.
 
-	\section{Zwi¹zek z innymi pracami}
-	\noindent
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Cel pracy}
+\noindent
+
+Celem badañ jest stworzenie narzêdzi w postaci wtyczek do œrodowiska KNIME, s³u¿¹cych do gromadzenia metryk oprogramowania z systemów kontroli wersji oraz zgromadzenie jak najwiêkszej iloœci metryk w publicznym repozytorium.
+
+Nastêpnym krokiem bêdzie stworzenie modelu (modeli) predykcji defektów oraz ich ewaluacja.
+
+Stworzenie narzêdzi pozwalaj¹cych na zautomatyzowane gromadzenie metryk z dostêpnych projektów (na przyk³ad Open Source) pozwoli rozszerzyæ publiczne zbiory danych o bardzo du¿¹ liczbê metryk.
+
+Powstanie dziêki temu mo¿liwoœæ tworzenia skuteczniejszych modeli predykcji defektów oprogramowania dziêki: wiêkszym zbiorom ucz¹cym; ewaluacji modeli na wiêkszych zbiorach danych.
+
+Napisaæ coœ wiêcej pod k¹tem zapewnienia jakoœci, zredukowania wysi³ku.
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Zwi¹zek z innymi pracami}
+\noindent
+
 \begin{itemize}
-	\item przegl¹d literatury
+	\item przegl¹d literatury (do przeklejenia z SLR)
 	\item uzasadnienie, ¿e nie tworzê czegoœ, co wczeœniej stworzyli inni
 	\item twórcze wykorzystanie doœwiadczeñ (wyników pracy) innych
 \end{itemize}
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Struktura pracy}
+\noindent
 
-
-Wstêp Lorem \cite{bramwell2001} ipsum dolor sit amet, consectetur adipiscing elit. Integer odio lectus, egestas sed aliquet ut, semper et tortor. Ut consectetur augue non\cite{padfield2007}metus scelerisque accumsan. Ut quis odio dolor. Suspendisse eu ante ut lorem sagittis lacinia. Mauris elit neque, eleifend eget varius ut, adipiscing sit amet quam. Duis sit amet ullamcorper purus. Aliquam erat volutpat. Donec pharetra massa sed mauris vehicula aliquet eget eu nulla. Etiam non felis metus. Etiam consequat commodo ante. Cras accumsan risus eu enim volutpat quis lobortis risus sagittis. Mauris posuere rutrum ante, at consectetur massa iaculis in.
-
-Duis tristique, sapien et posuere iaculis, sapien lectus ultricies risus, nec placerat risus diam varius arcu. Curabitur eget metus id metus placerat dignissim. Curabitur faucibus est erat, at fermentum lorem. Sed interdum imperdiet erat, vitae dapibus eros feugiat non. Donec sit amet massa nec tortor elementum blandit. Vivamus eget magna odio. Donec hendrerit diam scelerisque arcu porta ut tempus lorem vulputate. Mauris sed tellus in risus bibendum luctus eu et sapien. In et scelerisque purus. Ut vel enim dolor. Proin vitae ipsum odio, nec pretium enim.
-
-Nunc id ligula at felis vestibulum accumsan. Sed molestie erat eu nibh semper tincidunt. In iaculis nisl sed sem dictum ut viverra velit tincidunt. Nunc eros elit, dapibus adipiscing iaculis ut, facilisis sit amet arcu. In blandit, libero vel ornare suscipit, orci eros egestas nisi, ac tincidunt arcu diam non nulla. Mauris auctor, diam ac cursus scelerisque, diam lorem vulputate urna, ut fringilla turpis nunc eget felis. In hac habitasse platea dictumst. Nunc id leo libero. Sed nunc nunc, venenatis sit amet semper mollis, lacinia non purus. Vestibulum id fermentum diam. Suspendisse faucibus massa ac sapien fermentum quis commodo ipsum tempus. Duis sagittis consectetur mi a tincidunt. In quam eros, viverra quis malesuada a, iaculis ac neque. Etiam pharetra, odio varius pharetra interdum, mauris dolor sodales leo, a sagittis enim orci in nulla. Nunc eu quam ligula, nec iaculis tortor.
-
-Sed suscipit interdum vulputate. Nulla vitae accumsan eros. Etiam eu consectetur enim. Duis et erat ut neque vestibulum malesuada. Cras et lectus dolor. Nullam feugiat semper mattis. Suspendisse non justo aliquet risus mattis tristique nec ut orci. Nulla facilisi. Ut bibendum neque sed nibh egestas a cursus mi volutpat. Morbi ac mi a enim tristique cursus. Pellentesque vitae diam massa. Donec dignissim blandit sollicitudin. Nulla dignissim dolor est, ut dictum libero. Ut sagittis tempus semper. Morbi vitae convallis dui. Quisque ut quam massa.
-
-Nunc bibendum orci id nisl posuere sit amet egestas nisl dictum. Cras faucibus hendrerit elit, non suscipit lacus pharetra in. Vivamus eu libero quis risus laoreet egestas. Morbi eleifend aliquet nisi id semper. Cras consequat est id urna malesuada scelerisque. Aliquam tristique, orci vitae suscipit imperdiet, enim magna laoreet leo, in dignissim mi elit vitae lacus. Morbi ut enim vel enim pretium elementum. Maecenas ultricies blandit nisl, eget tincidunt ligula cursus mattis. Fusce et massa non risus euismod gravida at quis quam. Duis sed nibh justo, id semper justo.
-
-Duis tristique, sapien et posuere iaculis, sapien lectus ultricies risus, nec placerat risus diam varius arcu. Curabitur eget metus id metus placerat dignissim. Curabitur faucibus est erat, at fermentum lorem. Sed interdum imperdiet erat, vitae dapibus eros feugiat non. Donec sit amet massa nec tortor elementum blandit. Vivamus eget magna odio. Donec hendrerit diam scelerisque arcu porta ut tempus lorem vulputate. Mauris sed tellus in risus bibendum luctus eu et sapien. In et scelerisque purus. Ut vel enim dolor. Proin vitae ipsum odio, nec pretium enim.
-
-Nunc id ligula at felis vestibulum accumsan. Sed molestie erat eu nibh semper tincidunt. In iaculis nisl sed sem dictum ut viverra velit tincidunt. Nunc eros elit, dapibus adipiscing iaculis ut, facilisis sit amet arcu. In blandit, libero vel ornare suscipit, orci eros egestas nisi, ac tincidunt arcu diam non nulla. Mauris auctor, diam ac cursus scelerisque, diam lorem vulputate urna, ut fringilla turpis nunc eget felis. In hac habitasse platea dictumst. Nunc id leo libero. Sed nunc nunc, venenatis sit amet semper mollis, lacinia non purus. Vestibulum id fermentum diam. Suspendisse faucibus massa ac sapien fermentum quis commodo ipsum tempus. Duis sagittis consectetur mi a tincidunt. In quam eros, viverra quis malesuada a, iaculis ac neque. Etiam pharetra, odio varius pharetra interdum, mauris dolor sodales leo, a sagittis enim orci in nulla. Nunc eu quam ligula, nec iaculis tortor.
-
-Sed suscipit interdum vulputate. Nulla vitae accumsan eros. Etiam eu consectetur enim. Duis et erat ut neque vestibulum malesuada. Cras et lectus dolor. Nullam feugiat semper mattis. Suspendisse non justo aliquet risus mattis tristique nec ut orci. Nulla facilisi. Ut bibendum neque sed nibh egestas a cursus mi volutpat. Morbi ac mi a enim tristique cursus. Pellentesque vitae diam massa. Donec dignissim blandit sollicitudin. Nulla dignissim dolor est, ut dictum libero. Ut sagittis tempus semper. Morbi vitae convallis dui. Quisque ut quam massa.
-
-Nunc bibendum orci id nisl posuere sit amet egestas nisl dictum. Cras faucibus hendrerit elit, non suscipit lacus pharetra in. Vivamus eu libero quis risus laoreet egestas. Morbi eleifend aliquet nisi id semper. Cras consequat est id urna malesuada scelerisque. Aliquam tristique, orci vitae suscipit imperdiet, enim magna laoreet leo, in dignissim mi elit vitae lacus. Morbi ut enim vel enim pretium elementum. Maecenas ultricies blandit nisl, eget tincidunt ligula cursus mattis. Fusce et massa non risus euismod gravida at quis quam. Duis sed nibh justo, id semper justo.
-
-Duis tristique, sapien et posuere iaculis, sapien lectus ultricies risus, nec placerat risus diam varius arcu. Curabitur eget metus id metus placerat dignissim. Curabitur faucibus est erat, at fermentum lorem. Sed interdum imperdiet erat, vitae dapibus eros feugiat non. Donec sit amet massa nec tortor elementum blandit. Vivamus eget magna odio. Donec hendrerit diam scelerisque arcu porta ut tempus lorem vulputate. Mauris sed tellus in risus bibendum luctus eu et sapien. In et scelerisque purus. Ut vel enim dolor. Proin vitae ipsum odio, nec pretium enim.
-
-Nunc id ligula at felis vestibulum accumsan. Sed molestie erat eu nibh semper tincidunt. In iaculis nisl sed sem dictum ut viverra velit tincidunt. Nunc eros elit, dapibus adipiscing iaculis ut, facilisis sit amet arcu. In blandit, libero vel ornare suscipit, orci eros egestas nisi, ac tincidunt arcu diam non nulla. Mauris auctor, diam ac cursus scelerisque, diam lorem vulputate urna, ut fringilla turpis nunc eget felis. In hac habitasse platea dictumst. Nunc id leo libero. Sed nunc nunc, venenatis sit amet semper mollis, lacinia non purus. Vestibulum id fermentum diam. Suspendisse faucibus massa ac sapien fermentum quis commodo ipsum tempus. Duis sagittis consectetur mi a tincidunt. In quam eros, viverra quis malesuada a, iaculis ac neque. Etiam pharetra, odio varius pharetra interdum, mauris dolor sodales leo, a sagittis enim orci in nulla. Nunc eu quam ligula, nec iaculis tortor.
-
-Sed suscipit interdum vulputate. Nulla vitae accumsan eros. Etiam eu consectetur enim. Duis et erat ut neque vestibulum malesuada. Cras et lectus dolor. Nullam feugiat semper mattis. Suspendisse non justo aliquet risus mattis tristique nec ut orci. Nulla facilisi. Ut bibendum neque sed nibh egestas a cursus mi volutpat. Morbi ac mi a enim tristique cursus. Pellentesque vitae diam massa. Donec dignissim blandit sollicitudin. Nulla dignissim dolor est, ut dictum libero. Ut sagittis tempus semper. Morbi vitae convallis dui. Quisque ut quam massa.
-
-Nunc bibendum orci id nisl posuere sit amet egestas nisl dictum. Cras faucibus hendrerit elit, non suscipit lacus pharetra in. Vivamus eu libero quis risus laoreet egestas. Morbi eleifend aliquet nisi id semper. Cras consequat est id urna malesuada scelerisque. Aliquam tristique, orci vitae suscipit imperdiet, enim magna laoreet leo, in dignissim mi elit vitae lacus. Morbi ut enim vel enim pretium elementum. Maecenas ultricies blandit nisl, eget tincidunt ligula cursus mattis. Fusce et massa non risus euismod gravida at quis quam. Duis sed nibh justo, id semper justo.
-Duis tristique, sapien et posuere iaculis, sapien lectus ultricies risus, nec placerat risus diam varius arcu. Curabitur eget metus id metus placerat dignissim. Curabitur faucibus est erat, at fermentum lorem. Sed interdum imperdiet erat, vitae dapibus eros feugiat non. Donec sit amet massa nec tortor elementum blandit. Vivamus eget magna odio. Donec hendrerit diam scelerisque arcu porta ut tempus lorem vulputate. Mauris sed tellus in risus bibendum luctus eu et sapien. In et scelerisque purus. Ut vel enim dolor. Proin vitae ipsum odio, nec pretium enim.
-
-Nunc id ligula at felis vestibulum accumsan. Sed molestie erat eu nibh semper tincidunt. In iaculis nisl sed sem dictum ut viverra velit tincidunt. Nunc eros elit, dapibus adipiscing iaculis ut, facilisis sit amet arcu. In blandit, libero vel ornare suscipit, orci eros egestas nisi, ac tincidunt arcu diam non nulla. Mauris auctor, diam ac cursus scelerisque, diam lorem vulputate urna, ut fringilla turpis nunc eget felis. In hac habitasse platea dictumst. Nunc id leo libero. Sed nunc nunc, venenatis sit amet semper mollis, lacinia non purus. Vestibulum id fermentum diam. Suspendisse faucibus massa ac sapien fermentum quis commodo ipsum tempus. Duis sagittis consectetur mi a tincidunt. In quam eros, viverra quis malesuada a, iaculis ac neque. Etiam pharetra, odio varius pharetra interdum, mauris dolor sodales leo, a sagittis enim orci in nulla. Nunc eu quam ligula, nec iaculis tortor.
-
-Sed suscipit interdum vulputate. Nulla vitae accumsan eros. Etiam eu consectetur enim. Duis et erat ut neque vestibulum malesuada. Cras et lectus dolor. Nullam feugiat semper mattis. Suspendisse non justo aliquet risus mattis tristique nec ut orci. Nulla facilisi. Ut bibendum neque sed nibh egestas a cursus mi volutpat. Morbi ac mi a enim tristique cursus. Pellentesque vitae diam massa. Donec dignissim blandit sollicitudin. Nulla dignissim dolor est, ut dictum libero. Ut sagittis tempus semper. Morbi vitae convallis dui. Quisque ut quam massa.
-
-Nunc bibendum orci id nisl posuere sit amet egestas nisl dictum. Cras faucibus hendrerit elit, non suscipit lacus pharetra in. Vivamus eu libero quis risus laoreet egestas. Morbi eleifend aliquet nisi id semper. Cras consequat est id urna malesuada scelerisque. Aliquam tristique, orci vitae suscipit imperdiet, enim magna laoreet leo, in dignissim mi elit vitae lacus. Morbi ut enim vel enim pretium elementum. Maecenas ultricies blandit nisl, eget tincidunt ligula cursus mattis. Fusce et massa non risus euismod gravida at quis quam. Duis sed nibh justo, id semper justo.
-Duis tristique, sapien et posuere iaculis, sapien lectus ultricies risus, nec placerat risus diam varius arcu. Curabitur eget metus id metus placerat dignissim. Curabitur faucibus est erat, at fermentum lorem. Sed interdum imperdiet erat, vitae dapibus eros feugiat non. Donec sit amet massa nec tortor elementum blandit. Vivamus eget magna odio. Donec hendrerit diam scelerisque arcu porta ut tempus lorem vulputate. Mauris sed tellus in risus bibendum luctus eu et sapien. In et scelerisque purus. Ut vel enim dolor. Proin vitae ipsum odio, nec pretium enim.
-
-Nunc id ligula at felis vestibulum accumsan. Sed molestie erat eu nibh semper tincidunt. In iaculis nisl sed sem dictum ut viverra velit tincidunt. Nunc eros elit, dapibus adipiscing iaculis ut, facilisis sit amet arcu. In blandit, libero vel ornare suscipit, orci eros egestas nisi, ac tincidunt arcu diam non nulla. Mauris auctor, diam ac cursus scelerisque, diam lorem vulputate urna, ut fringilla turpis nunc eget felis. In hac habitasse platea dictumst. Nunc id leo libero. Sed nunc nunc, venenatis sit amet semper mollis, lacinia non purus. Vestibulum id fermentum diam. Suspendisse faucibus massa ac sapien fermentum quis commodo ipsum tempus. Duis sagittis consectetur mi a tincidunt. In quam eros, viverra quis malesuada a, iaculis ac neque. Etiam pharetra, odio varius pharetra interdum, mauris dolor sodales leo, a sagittis enim orci in nulla. Nunc eu quam ligula, nec iaculis tortor.
-
-Sed suscipit interdum vulputate. Nulla vitae accumsan eros. Etiam eu consectetur enim. Duis et erat ut neque vestibulum malesuada. Cras et lectus dolor. Nullam feugiat semper mattis. Suspendisse non justo aliquet risus mattis tristique nec ut orci. Nulla facilisi. Ut bibendum neque sed nibh egestas a cursus mi volutpat. Morbi ac mi a enim tristique cursus. Pellentesque vitae diam massa. Donec dignissim blandit sollicitudin. Nulla dignissim dolor est, ut dictum libero. Ut sagittis tempus semper. Morbi vitae convallis dui. Quisque ut quam massa.
-
-Nunc bibendum orci id nisl posuere sit amet egestas nisl dictum. Cras faucibus hendrerit elit, non suscipit lacus pharetra in. Vivamus eu libero quis risus laoreet egestas. Morbi eleifend aliquet nisi id semper. Cras consequat est id urna malesuada scelerisque. Aliquam tristique, orci vitae suscipit imperdiet, enim magna laoreet leo, in dignissim mi elit vitae lacus. Morbi ut enim vel enim pretium elementum. Maecenas ultricies blandit nisl, eget tincidunt ligula cursus mattis. Fusce et massa non risus euismod gravida at quis quam. Duis sed nibh justo, id semper justo.
-Duis tristique, sapien et posuere iaculis, sapien lectus ultricies risus, nec placerat risus diam varius arcu. Curabitur eget metus id metus placerat dignissim. Curabitur faucibus est erat, at fermentum lorem. Sed interdum imperdiet erat, vitae dapibus eros feugiat non. Donec sit amet massa nec tortor elementum blandit. Vivamus eget magna odio. Donec hendrerit diam scelerisque arcu porta ut tempus lorem vulputate. Mauris sed tellus in risus bibendum luctus eu et sapien. In et scelerisque purus. Ut vel enim dolor. Proin vitae ipsum odio, nec pretium enim.
-
-Nunc id ligula at felis vestibulum accumsan. Sed molestie erat eu nibh semper tincidunt. In iaculis nisl sed sem dictum ut viverra velit tincidunt. Nunc eros elit, dapibus adipiscing iaculis ut, facilisis sit amet arcu. In blandit, libero vel ornare suscipit, orci eros egestas nisi, ac tincidunt arcu diam non nulla. Mauris auctor, diam ac cursus scelerisque, diam lorem vulputate urna, ut fringilla turpis nunc eget felis. In hac habitasse platea dictumst. Nunc id leo libero. Sed nunc nunc, venenatis sit amet semper mollis, lacinia non purus. Vestibulum id fermentum diam. Suspendisse faucibus massa ac sapien fermentum quis commodo ipsum tempus. Duis sagittis consectetur mi a tincidunt. In quam eros, viverra quis malesuada a, iaculis ac neque. Etiam pharetra, odio varius pharetra interdum, mauris dolor sodales leo, a sagittis enim orci in nulla. Nunc eu quam ligula, nec iaculis tortor.
-
-Sed suscipit interdum vulputate. Nulla vitae accumsan eros. Etiam eu consectetur enim. Duis et erat ut neque vestibulum malesuada. Cras et lectus dolor. Nullam feugiat semper mattis. Suspendisse non justo aliquet risus mattis tristique nec ut orci. Nulla facilisi. Ut bibendum neque sed nibh egestas a cursus mi volutpat. Morbi ac mi a enim tristique cursus. Pellentesque vitae diam massa. Donec dignissim blandit sollicitudin. Nulla dignissim dolor est, ut dictum libero. Ut sagittis tempus semper. Morbi vitae convallis dui. Quisque ut quam massa.
-
-Nunc bibendum orci id nisl posuere sit amet egestas nisl dictum. Cras faucibus hendrerit elit, non suscipit lacus pharetra in. Vivamus eu libero quis risus laoreet egestas. Morbi eleifend aliquet nisi id semper. Cras consequat est id urna malesuada scelerisque. Aliquam tristique, orci vitae suscipit imperdiet, enim magna laoreet leo, in dignissim mi elit vitae lacus. Morbi ut enim vel enim pretium elementum. Maecenas ultricies blandit nisl, eget tincidunt ligula cursus mattis. Fusce et massa non risus euismod gravida at quis quam. Duis sed nibh justo, id semper justo.
+Omówienie zawartoœci rozdzia³ów

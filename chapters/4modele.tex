@@ -1,0 +1,101 @@
+Wykorzystanie RandomForest \cite{hata2012bug, kamei2010revisiting, lessmann2008benchmarking, liaw2002classification, mende2010effort}
+
+Udzia³ \% metod z b³êdami jest niewielki --- modele predykcji maj¹ tendencjê do wskazywania wszystkich jako 0, bo ma³o FP --- logistic regression tak mia³o w \cite{hata2012bug}.
+
+Walidacja modelu przez 10-fold cross validation oraz przez testowanie na zbiorze danych z nastêpnego wydania (ang. \textit{release}).
+
+Wykorzystywane algorytmy:
+\begin{itemize}
+	\item RandomForest
+	\item J48
+	\item NaiveBayes
+	\item Bagging
+	\item AdaBoostM1
+	\item RacedIncrementalLogitBoost
+	\item LMT
+	\item BFTree
+	\item RandomTree
+\end{itemize}
+
+
+Przebadane projekty:
+
+\begin{figure}[h!]
+	\caption{Projekty}
+	\centering
+	\includegraphics[width=1\textwidth]{img/projekty}
+\end{figure}
+
+
+\begin{figure}[h!]
+	\caption{Wyniki}
+	\centering
+	\includegraphics[width=1\textwidth]{img/wyniki}
+\end{figure}
+
+
+
+\begin{itemize}
+	\item NCSS = Non Commenting Source Statements
+	\item pierwszy wiersz w wyniku (Sort by NCSS) polega na posortowaniu metod od najmniejszych i sprawdzaniu ich w tej kolejnoœci
+	\item kolejne wyniki s¹ dla modeli opartych na wymienionych wy¿ej algorytmach klasyfikacji
+	\item wyniki porównujê g³ównie na podstawie efektywnoœci znajdowania b³êdów --- sortujê wyniki wg prawdopodobieñstwa wyst¹pienia b³êdu w metodzie (algorytmy podaj¹ zwyciêzcê oraz prawdopodobieñstwa dla 0 i 1), nastêpnie zliczam ile \% b³êdów zostanie odnalezione przy przegl¹daniu 20\% kodu w tej kolejnoœci
+	\item wyniki w tabeli poni¿ej
+	\item przyk³adowe wykresy efektywnoœci dla 2 projektów poni¿ej
+	\item na wykresach wybrane 2 projekty które wysz³y najgorzej, w pozosta³ych projektach te krzywe s¹ jeszcze bardziej strome
+\end{itemize}
+
+\begin{figure}[h!]
+	\caption{Ant --- Sort by NCSS}
+	\centering
+	\includegraphics[width=1\textwidth]{charts/ant0}
+\end{figure}
+
+\begin{figure}[h!]
+	\caption{Ant --- RandomForest}
+	\centering
+	\includegraphics[width=1\textwidth]{charts/ant1}
+\end{figure}
+
+\begin{figure}[h!]
+	\caption{Ant --- J48}
+	\centering
+	\includegraphics[width=1\textwidth]{charts/ant2}
+\end{figure}
+
+
+
+
+
+\begin{figure}[h!]
+	\caption{ECF --- Sort by NCSS}
+	\centering
+	\includegraphics[width=1\textwidth]{charts/ecf0}
+\end{figure}
+
+\begin{figure}[h!]
+	\caption{ECF --- RandomForest}
+	\centering
+	\includegraphics[width=1\textwidth]{charts/ecf1}
+\end{figure}
+
+\begin{figure}[h!]
+	\caption{ECF --- J48}
+	\centering
+	\includegraphics[width=1\textwidth]{charts/ecf2}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 1
+\section{Ocena rozwi¹zania}
+\noindent
+
+np. Goal-Question-Metric
+
+\begin{itemize}
+	\item Stopieñ realizacji wymagañ funkcjonalnych
+	\item Poprawnoœæ rozwi¹zania (funkcjonowania systemu): weryfikacja (symulacja), testowanie
+		\\utworzenie nowego modelu predykcji defektów, bazuj¹cego na zgromadzonych metrykach w celu weryfikacji przydatnoœci narzêdzi i zgromadzonych metryk
+	\item W³aœciwoœci (parametry) rozwi¹zania
+	\item Porównanie z innymi rozwi¹zaniami
+\end{itemize}

@@ -1,0 +1,280 @@
+\begin{thebibliography}{10}
+
+\bibitem{arisholm2010systematic}
+Arisholm E., Briand L.~C., Johannessen E.~B.
+\newblock A systematic and comprehensive investigation of methods to build and
+  evaluate fault prediction models.
+\newblock {\em Journal of Systems and Software}, 83(1):2--17, 2010.
+
+\bibitem{bevan2005facilitating}
+Bevan J., Whitehead~Jr E.~J., Kim S., Godfrey M.
+\newblock Facilitating software evolution research with kenyon.
+\newblock In {\em ACM SIGSOFT Software Engineering Notes}, volume~30, pages
+  177--186. ACM, 2005.
+
+\bibitem{bird2011don}
+Bird C., Nagappan N., Murphy B., Gall H., Devanbu P.
+\newblock Don't touch my code!: examining the effects of ownership on software
+  quality.
+\newblock In {\em Proceedings of the 19th ACM SIGSOFT symposium and the 13th
+  European conference on Foundations of software engineering}, pages 4--14.
+  ACM, 2011.
+
+\bibitem{catal2009systematic}
+Catal C., Diri B.
+\newblock A systematic review of software fault prediction studies.
+\newblock {\em Expert systems with applications}, 36(4):7346--7354, 2009.
+
+\bibitem{concas2011distribution}
+Concas G., Marchesi M., Murgia A., Tonelli R., Turnu I.
+\newblock On the distribution of bugs in the eclipse system.
+\newblock {\em Software Engineering, IEEE Transactions on}, 37(6):872--877,
+  2011.
+
+\bibitem{cubranic2003hipikat}
+Cubranic D., Murphy G.~C.
+\newblock Hipikat: Recommending pertinent software development artifacts.
+\newblock In {\em Software Engineering, 2003. Proceedings. 25th International
+  Conference on}, pages 408--418. IEEE, 2003.
+
+\bibitem{czerwonka2011crane}
+Czerwonka J., Das R., Nagappan N., Tarvo A., Teterev A.
+\newblock Crane: Failure prediction, change analysis and test prioritization in
+  practice--experiences from windows.
+\newblock In {\em Software Testing, Verification and Validation (ICST), 2011
+  IEEE Fourth International Conference on}, pages 357--366. IEEE, 2011.
+
+\bibitem{d2010extensive}
+D'Ambros M., Lanza M., Robbes R.
+\newblock An extensive comparison of bug prediction approaches.
+\newblock In {\em Mining Software Repositories (MSR), 2010 7th IEEE Working
+  Conference on}, pages 31--41. IEEE, 2010.
+
+\bibitem{d2012evaluating}
+D'Ambros M., Lanza M., Robbes R.
+\newblock Evaluating defect prediction approaches: a benchmark and an extensive
+  comparison.
+\newblock {\em Empirical Software Engineering}, 17(4-5):531--577, 2012.
+
+\bibitem{endres2003handbook}
+Endres A., Rombach H.~D.
+\newblock {\em A handbook of software and systems engineering: empirical
+  observations, laws and theories}.
+\newblock Pearson Education, 2003.
+
+\bibitem{ferzund2009empirical}
+Ferzund J., Ahsan S.~N., Wotawa F.
+\newblock Empirical evaluation of hunk metrics as bug predictors.
+\newblock In {\em Software Process and Product Measurement}, pages 242--254.
+  Springer, 2009.
+
+\bibitem{ferzund2009software}
+Ferzund J., Ahsan S.~N., Wotawa F.
+\newblock Software change classification using hunk metrics.
+\newblock In {\em Software Maintenance, 2009. ICSM 2009. IEEE International
+  Conference on}, pages 471--474. IEEE, 2009.
+
+\bibitem{giger2012method}
+Giger E., D'Ambros M., Pinzger M., Gall H.~C.
+\newblock Method-level bug prediction.
+\newblock In {\em Proceedings of the ACM-IEEE international symposium on
+  Empirical software engineering and measurement}, pages 171--180. ACM, 2012.
+
+\bibitem{godfrey2005using}
+Godfrey M.~W., Zou L.
+\newblock Using origin analysis to detect merging and splitting of source code
+  entities.
+\newblock {\em Software Engineering, IEEE Transactions on}, 31(2):166--181,
+  2005.
+
+\bibitem{graves2000predicting}
+Graves T.~L., Karr A.~F., Marron J.~S., Siy H.
+\newblock Predicting fault incidence using software change history.
+\newblock {\em Software Engineering, IEEE Transactions on}, 26(7):653--661,
+  2000.
+
+\bibitem{hall2012systematic}
+Hall T., Beecham S., Bowes D., Gray D., Counsell S.
+\newblock A systematic literature review on fault prediction performance in
+  software engineering.
+\newblock {\em Software Engineering, IEEE Transactions on}, 38(6):1276--1304,
+  2012.
+
+\bibitem{hassan2009predicting}
+Hassan A.~E.
+\newblock Predicting faults using the complexity of code changes.
+\newblock In {\em Proceedings of the 31st International Conference on Software
+  Engineering}, pages 78--88. IEEE Computer Society, 2009.
+
+\bibitem{hassan2004c}
+Hassan A.~E., Holt R.~C.
+\newblock C-rex: an evolutionary code extractor for c.
+\newblock In {\em CSER Meeting}. Citeseer, 2004.
+
+\bibitem{hassan2005top}
+Hassan A.~E., Holt R.~C.
+\newblock The top ten list: Dynamic fault prediction.
+\newblock In {\em Software Maintenance, 2005. ICSM'05. Proceedings of the 21st
+  IEEE International Conference on}, pages 263--272. IEEE, 2005.
+
+\bibitem{hata2012bug}
+Hata H., Mizuno O., Kikuno T.
+\newblock Bug prediction based on fine-grained module histories.
+\newblock In {\em Proceedings of the 2012 International Conference on Software
+  Engineering}, pages 200--210. IEEE Press, 2012.
+
+\bibitem{kamei2010revisiting}
+Kamei Y., Matsumoto S., Monden A., Matsumoto K.-i., Adams B., Hassan A.~E.
+\newblock Revisiting common bug prediction findings using effort-aware models.
+\newblock In {\em Software Maintenance (ICSM), 2010 IEEE International
+  Conference on}, pages 1--10. IEEE, 2010.
+
+\bibitem{kim2007predicting}
+Kim S., Zimmermann T., Whitehead~Jr E.~J., Zeller A.
+\newblock Predicting faults from cached history.
+\newblock In {\em Proceedings of the 29th international conference on Software
+  Engineering}, pages 489--498. IEEE Computer Society, 2007.
+
+\bibitem{koru2008theory}
+Koru A.~G., El~Emam K., Zhang D., Liu H., Mathew D.
+\newblock Theory of relative defect proneness.
+\newblock {\em Empirical Software Engineering}, 13(5):473--498, 2008.
+
+\bibitem{lessmann2008benchmarking}
+Lessmann S., Baesens B., Mues C., Pietsch S.
+\newblock Benchmarking classification models for software defect prediction: A
+  proposed framework and novel findings.
+\newblock {\em Software Engineering, IEEE Transactions on}, 34(4):485--496,
+  2008.
+
+\bibitem{liaw2002classification}
+Liaw A., Wiener M.
+\newblock Classification and regression by randomforest.
+\newblock {\em R news}, 2(3):18--22, 2002.
+
+\bibitem{mende2010effort}
+Mende T., Koschke R.
+\newblock Effort-aware defect prediction models.
+\newblock In {\em Software Maintenance and Reengineering (CSMR), 2010 14th
+  European Conference on}, pages 107--116. IEEE, 2010.
+
+\bibitem{meneely2008predicting}
+Meneely A., Williams L., Snipes W., Osborne J.
+\newblock Predicting failures with developer networks and social network
+  analysis.
+\newblock In {\em Proceedings of the 16th ACM SIGSOFT International Symposium
+  on Foundations of software engineering}, pages 13--23. ACM, 2008.
+
+\bibitem{menzies2010defect}
+Menzies T., Milton Z., Turhan B., Cukic B., Jiang Y., Bener A.
+\newblock Defect prediction from static code features: current results,
+  limitations, new approaches.
+\newblock {\em Automated Software Engineering}, 17(4):375--407, 2010.
+
+\bibitem{mizuno2007training}
+Mizuno O., Kikuno T.
+\newblock Training on errors experiment to detect fault-prone software modules
+  by spam filter.
+\newblock In {\em Proceedings of the the 6th joint meeting of the European
+  software engineering conference and the ACM SIGSOFT symposium on The
+  foundations of software engineering}, pages 405--414. ACM, 2007.
+
+\bibitem{mockus2010organizational}
+Mockus A.
+\newblock Organizational volatility and its effects on software defects.
+\newblock In {\em Proceedings of the eighteenth ACM SIGSOFT international
+  symposium on Foundations of software engineering}, pages 117--126. ACM, 2010.
+
+\bibitem{moser2008comparative}
+Moser R., Pedrycz W., Succi G.
+\newblock A comparative analysis of the efficiency of change metrics and static
+  code attributes for defect prediction.
+\newblock In {\em Software Engineering, 2008. ICSE'08. ACM/IEEE 30th
+  International Conference on}, pages 181--190. IEEE, 2008.
+
+\bibitem{nagappan2005use}
+Nagappan N., Ball T.
+\newblock Use of relative code churn measures to predict system defect density.
+\newblock In {\em Software Engineering, 2005. ICSE 2005. Proceedings. 27th
+  International Conference on}, pages 284--292. IEEE, 2005.
+
+\bibitem{nagappan2008influence}
+Nagappan N., Murphy B., Basili V.
+\newblock The influence of organizational structure on software quality: an
+  empirical case study.
+\newblock In {\em Proceedings of the 30th international conference on Software
+  engineering}, pages 521--530. ACM, 2008.
+
+\bibitem{nguyen2012multi}
+Nguyen A.~T., Nguyen T.~T., Nguyen H.~A., Nguyen T.~N.
+\newblock Multi-layered approach for recovering links between bug reports and
+  fixes.
+\newblock In {\em Proceedings of the ACM SIGSOFT 20th International Symposium
+  on the Foundations of Software Engineering}, page~63. ACM, 2012.
+
+\bibitem{nguyen2010studying}
+Nguyen T.~H., Adams B., Hassan A.~E.
+\newblock Studying the impact of dependency network measures on software
+  quality.
+\newblock In {\em Software Maintenance (ICSM), 2010 IEEE International
+  Conference on}, pages 1--10. IEEE, 2010.
+
+\bibitem{pinzger2008can}
+Pinzger M., Nagappan N., Murphy B.
+\newblock Can developer-module networks predict failures?
+\newblock In {\em Proceedings of the 16th ACM SIGSOFT International Symposium
+  on Foundations of software engineering}, pages 2--12. ACM, 2008.
+
+\bibitem{posnett2011ecological}
+Posnett D., Filkov V., Devanbu P.
+\newblock Ecological inference in empirical software engineering.
+\newblock In {\em Proceedings of the 2011 26th IEEE/ACM International
+  Conference on Automated Software Engineering}, pages 362--371. IEEE Computer
+  Society, 2011.
+
+\bibitem{rahman2011ownership}
+Rahman F., Devanbu P.
+\newblock Ownership, experience and defects: a fine-grained study of
+  authorship.
+\newblock In {\em Proceedings of the 33rd International Conference on Software
+  Engineering}, pages 491--500. ACM, 2011.
+
+\bibitem{rahman2011bugcache}
+Rahman F., Posnett D., Hindle A., Barr E., Devanbu P.
+\newblock Bugcache for inspections: hit or miss?
+\newblock In {\em Proceedings of the 19th ACM SIGSOFT symposium and the 13th
+  European conference on Foundations of software engineering}, pages 322--331.
+  ACM, 2011.
+
+\bibitem{sliwerski2005changes}
+{\'S}liwerski J., Zimmermann T., Zeller A.
+\newblock When do changes induce fixes?
+\newblock {\em ACM sigsoft software engineering notes}, 30(4):1--5, 2005.
+
+\bibitem{weyuker2008too}
+Weyuker E.~J., Ostrand T.~J., Bell R.~M.
+\newblock Do too many cooks spoil the broth? using the number of developers to
+  enhance defect prediction models.
+\newblock {\em Empirical Software Engineering}, 13(5):539--559, 2008.
+
+\bibitem{wolf2009predicting}
+Wolf T., Schroter A., Damian D., Nguyen T.
+\newblock Predicting build failures using social network analysis on developer
+  communication.
+\newblock In {\em Proceedings of the 31st International Conference on Software
+  Engineering}, pages 1--11. IEEE Computer Society, 2009.
+
+\bibitem{wu2011relink}
+Wu R., Zhang H., Kim S., Cheung S.-C.
+\newblock Relink: recovering links between bugs and changes.
+\newblock In {\em Proceedings of the 19th ACM SIGSOFT symposium and the 13th
+  European conference on Foundations of software engineering}, pages 15--25.
+  ACM, 2011.
+
+\bibitem{zimmermann2006fine}
+Zimmermann T.
+\newblock Fine-grained processing of cvs archives with apfel.
+\newblock In {\em Proceedings of the 2006 OOPSLA workshop on eclipse technology
+  eXchange}, pages 16--20. ACM, 2006.
+
+\end{thebibliography}

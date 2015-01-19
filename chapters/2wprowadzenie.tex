@@ -1,0 +1,117 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Rola metryk w in¿ynierii oprogramowania}
+\noindent
+
+zastosowania metryk do ró¿nych celów
+
+krótko o rodzajach metryk, do czego mo¿na ich u¿yæ
+
+\begin{itemize}
+	\item metryki procesu daj¹ lepsze efekty
+	\item HCM?? \cite{hassan2009predicting}
+	\item metryki organizacji nie koreluj¹ z b³êdami \cite{hata2012bug}
+	\item wa¿noœæ historycznych metryk \cite{nagappan2005use, graves2000predicting, hassan2005top, kim2007predicting, hassan2009predicting, weyuker2008too, nagappan2008influence, mockus2010organizational, pinzger2008can, meneely2008predicting, wolf2009predicting, bird2011don, rahman2011ownership, moser2008comparative, kamei2010revisiting, czerwonka2011crane}
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Systemy kontroli wersji jako Ÿród³o danych o projektach}
+\noindent
+
+jak siê wyci¹ga historie metod (fine-grained metrics)
+
+\begin{itemize}
+	\item C-REX \cite{hassan2004c}
+	\item BEAGLE \cite{godfrey2005using}
+	\item Kenyon \cite{bevan2005facilitating}
+	\item APFEL \cite{zimmermann2006fine}
+	\item Historage \cite{hata2012bug}
+	\item ChangeDistiller \cite{giger2012method}
+\end{itemize}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Wyci¹ganie i linkowanie bugów (przeredagowaæ tytu³)}
+\noindent
+
+ogólnie o ITS: jira, bugzilla, IBM, ...
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{metody}
+\noindent
+\begin{itemize}
+	\item SZZ \cite{sliwerski2005changes}
+	\item ReLink \cite{wu2011relink}
+	\item MLink \cite{nguyen2012multi}
+	\item HIPIKAT \cite{cubranic2003hipikat}
+\end{itemize}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Sformu³owanie problemu}
+\noindent
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Koszty zapewnienia jakoœci}
+\noindent
+
+Koszty zapewnienia jakoœci s¹ prawie proporcjonalne do wielkoœci modu³u \cite{arisholm2010systematic}.
+
+File-level s¹ bardziej efektywne ni¿ package-level \cite{kamei2010revisiting, posnett2011ecological, nguyen2010studying}.
+
+Œrednio plik ma 10 metod a b³êdy s¹ tylko w 1--2 metodach.
+
+Method-level \cite{kim2007predicting, mizuno2007training}
+
+Zmniejszyæ koszt, wysi³ek to obecnie g³ówny kierunek \cite{arisholm2010systematic, mende2010effort, menzies2010defect, rahman2011bugcache, koru2008theory}.
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Przeznaczenie narzêdzi}
+\noindent
+
+Przeznaczenie narzêdzi, DePress platforma (framework)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Wymagania}
+\noindent
+
+Wymagania
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Ograniczenia dotycz¹ce realizacji}
+\noindent
+
+Ograniczenia dotycz¹ce realizacji (narzucone, za³o¿one)
+
+Stworzenie wtyczek do Knime, s³u¿¹cych do wyliczania metryk procesu na podstawie danych z systemów kontroli wersji, zgromadzenie metryk z projektów Open Source w repozytorium.
+
+Za³o¿enia: wtyczki w œrodowisku Knime, wykorzystanie istniej¹cych rozwi¹zañ platformy DePress, systemy kontroli wersji: git, svn.
+
+Ograniczenia zakresu tematycznego: badanie tylko projektów pisanych w Java
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Mo¿liwoœci realizacji zadañ}
+\noindent
+
+Mo¿liwoœci realizacji zadañ - wstêpna dyskusja
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Metoda oceny}
+\noindent
+
+Effort-based evaluation (na polski)
+
+Poddajemy inspekcji 20\% LOC albo 20\% instrukcji (bo 1 LOC $\neq$ 1 instrukcja) lub poddajemy inspekcji okreœlon¹ liczbê LOC (sta³y próg, bo 20\% LOC z du¿ego projektu mo¿e byæ zbyt wiele) --- ile \% b³êdów znaleziono
+
+
+
+
+
+

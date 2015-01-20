@@ -10,51 +10,23 @@ Bookmark#6=0
 Bookmark#7=0
 Bookmark#8=0
 Bookmark#9=0
-CaretPos.X=16
-CaretPos.Y=10
-CharSet=def
-FileName=main.tex
-FoldedLines=
-IsMainFile=yes
-Opened=yes
-ScrollPos.X=0
-ScrollPos.Y=0
-SearchListCount=0
-ShowSyntax=yes
-SpellChecking=yes
-TabOrder=0
-UseThesaurus=yes
-WrapLine=yes
-
-[Files\1]
-ActiveFilters=
-Bookmark#0=0
-Bookmark#1=0
-Bookmark#2=0
-Bookmark#3=0
-Bookmark#4=0
-Bookmark#5=0
-Bookmark#6=0
-Bookmark#7=0
-Bookmark#8=0
-Bookmark#9=0
 CaretPos.X=0
 CaretPos.Y=0
 CharSet=def
 FileName=iisthesis.cls
 FoldedLines=
 IsMainFile=no
-Opened=yes
+Opened=no
 ScrollPos.X=0
 ScrollPos.Y=1
 SearchListCount=0
 ShowSyntax=yes
 SpellChecking=yes
-TabOrder=1
+TabOrder=-1
 UseThesaurus=yes
 WrapLine=yes
 
-[Files\2]
+[Files\1]
 ActiveFilters=
 Bookmark#0=0
 Bookmark#1=0
@@ -82,7 +54,7 @@ TabOrder=-1
 UseThesaurus=yes
 WrapLine=yes
 
-[Files\3]
+[Files\2]
 ActiveFilters=
 Bookmark#0=0
 Bookmark#1=0
@@ -110,7 +82,7 @@ TabOrder=-1
 UseThesaurus=no
 WrapLine=no
 
-[Files\4]
+[Files\3]
 ActiveFilters=
 Bookmark#0=0
 Bookmark#1=0
@@ -138,7 +110,7 @@ TabOrder=-1
 UseThesaurus=yes
 WrapLine=yes
 
-[Files\5]
+[Files\4]
 ActiveFilters=
 Bookmark#0=0
 Bookmark#1=0
@@ -153,21 +125,21 @@ Bookmark#9=0
 CaretPos.X=0
 CaretPos.Y=0
 CharSet=def
-FileName=chapters\2rozdzial-drugi.tex
+FileName=PredykcjaDefektowNaPoziomieMetod.tex
 FoldedLines=
-IsMainFile=no
-Opened=no
+IsMainFile=yes
+Opened=yes
 ScrollPos.X=0
 ScrollPos.Y=0
 SearchListCount=0
 ShowSyntax=yes
 SpellChecking=yes
-TabOrder=-1
+TabOrder=0
 UseThesaurus=yes
 WrapLine=yes
 
 [Files]
-Count=6
+Count=5
 
 [Project]
 ActiveFilters=

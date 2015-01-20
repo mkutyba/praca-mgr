@@ -5,6 +5,9 @@ Repeated entry---line 106 of file bibliografia.bib
  : @inproceedings{hassan2009predicting
  :                                    ,
 I'm skipping whatever remains of this entry
+Warning--entry type for "DBLP:2014:Online" isn't style-file defined
+--line 459 of file bibliografia.bib
 Warning--I didn't find a database entry for "brak_refa"
 Warning--can't use both volume and number fields in bevan2005facilitating
+Warning--empty journal in hata2012fault
 (There was 1 error message)

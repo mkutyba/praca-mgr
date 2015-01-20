@@ -1,8 +1,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Rola metryk w in¿ynierii oprogramowania}
-\noindent
+\label{rola-metryk}
 
-zastosowania metryk do ró¿nych celów
+\noindent zastosowania metryk do ró¿nych celów
 
 krótko o rodzajach metryk, do czego mo¿na ich u¿yæ
 
@@ -16,9 +16,8 @@ krótko o rodzajach metryk, do czego mo¿na ich u¿yæ
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Systemy kontroli wersji jako Ÿród³o danych o projektach}
-\noindent
 
-jak siê wyci¹ga historie metod (fine-grained metrics)
+\noindent jak siê wyci¹ga historie metod (fine-grained metrics)
 
 \begin{itemize}
 	\item C-REX \cite{hassan2004c}
@@ -34,12 +33,12 @@ jak siê wyci¹ga historie metod (fine-grained metrics)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Wyci¹ganie i linkowanie bugów (przeredagowaæ tytu³)}
-\noindent
 
-ogólnie o ITS: jira, bugzilla, IBM, ...
+\noindent ogólnie o ITS: jira, bugzilla, IBM, ...
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{metody}
+
 \noindent
 \begin{itemize}
 	\item SZZ \cite{sliwerski2005changes}
@@ -53,13 +52,21 @@ ogólnie o ITS: jira, bugzilla, IBM, ...
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Sformu³owanie problemu}
-\noindent
+
+\noindent G³ównym celem badañ jest stworzenie narzêdzi w postaci wtyczek do œrodowiska KNIME, s³u¿¹cych do gromadzenia metryk oprogramowania z systemów kontroli wersji oraz zgromadzenie jak najwiêkszej iloœci metryk w publicznym repozytorium.
+
+Nastêpnym krokiem bêdzie stworzenie modelu (modeli) predykcji defektów oraz ich ewaluacja.
+
+Stworzenie narzêdzi pozwalaj¹cych na zautomatyzowane gromadzenie metryk z dostêpnych projektów (na przyk³ad Open Source) pozwoli rozszerzyæ publiczne zbiory danych o bardzo du¿¹ liczbê metryk.
+
+Powstanie dziêki temu mo¿liwoœæ tworzenia skuteczniejszych modeli predykcji defektów oprogramowania dziêki: wiêkszym zbiorom ucz¹cym; ewaluacji modeli na wiêkszych zbiorach danych.
+
+Napisaæ coœ wiêcej pod k¹tem zapewnienia jakoœci, zredukowania wysi³ku.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Koszty zapewnienia jakoœci}
-\noindent
 
-Koszty zapewnienia jakoœci s¹ prawie proporcjonalne do wielkoœci modu³u \cite{arisholm2010systematic}.
+\noindent Koszty zapewnienia jakoœci s¹ prawie proporcjonalne do wielkoœci modu³u \cite{arisholm2010systematic}.
 
 File-level s¹ bardziej efektywne ni¿ package-level \cite{kamei2010revisiting, posnett2011ecological, nguyen2010studying}.
 
@@ -74,21 +81,18 @@ Zmniejszyæ koszt, wysi³ek to obecnie g³ówny kierunek \cite{arisholm2010systemati
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Przeznaczenie narzêdzi}
-\noindent
 
-Przeznaczenie narzêdzi, DePress platforma (framework)
+\noindent Przeznaczenie narzêdzi, DePress platforma (framework)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Wymagania}
-\noindent
 
-Wymagania
+\noindent Wymagania
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Ograniczenia dotycz¹ce realizacji}
-\noindent
 
-Ograniczenia dotycz¹ce realizacji (narzucone, za³o¿one)
+\noindent Ograniczenia dotycz¹ce realizacji (narzucone, za³o¿one)
 
 Stworzenie wtyczek do Knime, s³u¿¹cych do wyliczania metryk procesu na podstawie danych z systemów kontroli wersji, zgromadzenie metryk z projektów Open Source w repozytorium.
 
@@ -98,15 +102,13 @@ Ograniczenia zakresu tematycznego: badanie tylko projektów pisanych w Java
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Mo¿liwoœci realizacji zadañ}
-\noindent
 
-Mo¿liwoœci realizacji zadañ - wstêpna dyskusja
+\noindent Mo¿liwoœci realizacji zadañ - wstêpna dyskusja
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Metoda oceny}
-\noindent
 
-Effort-based evaluation (na polski)
+\noindent Effort-based evaluation (na polski)
 
 Poddajemy inspekcji 20\% LOC albo 20\% instrukcji (bo 1 LOC $\neq$ 1 instrukcja) lub poddajemy inspekcji okreœlon¹ liczbê LOC (sta³y próg, bo 20\% LOC z du¿ego projektu mo¿e byæ zbyt wiele) --- ile \% b³êdów znaleziono
 

@@ -56,6 +56,13 @@ D'Ambros M., Lanza M., Robbes R.
   comparison.
 \newblock {\em Empirical Software Engineering}, 17(4-5):531--577, 2012.
 
+\bibitem{dyer2013declarative}
+Dyer R., Rajan H., Nguyen T.~N.
+\newblock Declarative visitors to ease fine-grained source code mining with
+  full history on billions of ast nodes.
+\newblock In {\em Proceedings of the 12th international conference on
+  Generative programming: concepts \& experiences}, pages 23--32. ACM, 2013.
+
 \bibitem{endres2003handbook}
 Endres A., Rombach H.~D.
 \newblock {\em A handbook of software and systems engineering: empirical
@@ -80,12 +87,24 @@ Giger E., D'Ambros M., Pinzger M., Gall H.~C.
 \newblock In {\em Proceedings of the ACM-IEEE international symposium on
   Empirical software engineering and measurement}, pages 171--180. ACM, 2012.
 
+\bibitem{giger2011comparing}
+Giger E., Pinzger M., Gall H.~C.
+\newblock Comparing fine-grained source code changes and code churn for bug
+  prediction.
+\newblock In {\em Proceedings of the 8th Working Conference on Mining Software
+  Repositories}, pages 83--92. ACM, 2011.
+
 \bibitem{godfrey2005using}
 Godfrey M.~W., Zou L.
 \newblock Using origin analysis to detect merging and splitting of source code
   entities.
 \newblock {\em Software Engineering, IEEE Transactions on}, 31(2):166--181,
   2005.
+
+\bibitem{goodman1961snowball}
+Goodman L.~A.
+\newblock Snowball sampling.
+\newblock {\em The annals of mathematical statistics}, pages 148--170, 1961.
 
 \bibitem{graves2000predicting}
 Graves T.~L., Karr A.~F., Marron J.~S., Siy H.
@@ -117,6 +136,24 @@ Hassan A.~E., Holt R.~C.
 \newblock In {\em Software Maintenance, 2005. ICSM'05. Proceedings of the 21st
   IEEE International Conference on}, pages 263--272. IEEE, 2005.
 
+\bibitem{hata2012fault}
+Hata H.
+\newblock Fault-prone module prediction using version histories.
+\newblock 2012.
+
+\bibitem{hata2010reconstructing}
+Hata H., Mizuno O., Kikuno T.
+\newblock Reconstructing fine-grained versioning repositories with git for
+  method-level bug prediction.
+\newblock {\em IWESEP '10}, pages 27--32, 2010.
+
+\bibitem{hata2011historage}
+Hata H., Mizuno O., Kikuno T.
+\newblock Historage: fine-grained version control system for java.
+\newblock In {\em Proceedings of the 12th International Workshop on Principles
+  of Software Evolution and the 7th annual ERCIM Workshop on Software
+  Evolution}, pages 96--100. ACM, 2011.
+
 \bibitem{hata2012bug}
 Hata H., Mizuno O., Kikuno T.
 \newblock Bug prediction based on fine-grained module histories.
@@ -147,10 +184,22 @@ Lessmann S., Baesens B., Mues C., Pietsch S.
 \newblock {\em Software Engineering, IEEE Transactions on}, 34(4):485--496,
   2008.
 
+\bibitem{DBLP:2014:Online}
+Ley M., Herbstritt M., Ackermann M.~R., Hoffmann O., Wagner M., von Keutz S.,
+  Hostert K.
+\newblock Dblp bibliography, 2014.
+
 \bibitem{liaw2002classification}
 Liaw A., Wiener M.
 \newblock Classification and regression by randomforest.
 \newblock {\em R news}, 2(3):18--22, 2002.
+
+\bibitem{madeyski2014software}
+Madeyski L., Majchrzak M.
+\newblock Software measurement and defect prediction with depress extensible
+  framework.
+\newblock {\em Foundations of Computing and Decision Sciences}, 39(4):249--270,
+  2014.
 
 \bibitem{mende2010effort}
 Mende T., Koschke R.
@@ -245,6 +294,14 @@ Rahman F., Posnett D., Hindle A., Barr E., Devanbu P.
 \newblock In {\em Proceedings of the 19th ACM SIGSOFT symposium and the 13th
   European conference on Foundations of software engineering}, pages 322--331.
   ACM, 2011.
+
+\bibitem{riaz2009systematic}
+Riaz M., Mendes E., Tempero E.
+\newblock A systematic review of software maintainability prediction and
+  metrics.
+\newblock In {\em Proceedings of the 2009 3rd International Symposium on
+  Empirical Software Engineering and Measurement}, pages 367--377. IEEE
+  Computer Society, 2009.
 
 \bibitem{sliwerski2005changes}
 {\'S}liwerski J., Zimmermann T., Zeller A.

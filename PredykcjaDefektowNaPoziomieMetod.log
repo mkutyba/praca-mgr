@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.5.28)  19 JAN 2015 19:40
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2015.1.19)  20 JAN 2015 01:01
 entering extended mode
 **D:/SkyDrive/dyplom*mgr/praca*latex/PredykcjaDefektowNaPoziomieMetod.tex
 ("D:/SkyDrive/dyplom mgr/praca latex/PredykcjaDefektowNaPoziomieMetod.tex"
@@ -480,7 +480,7 @@ LaTeX Info: Redefining \nameref on input line 12.
 ("D:\SkyDrive\dyplom mgr\praca latex\PredykcjaDefektowNaPoziomieMetod.out")
 \@outlinefile=\write3
 
-<logos/pwr.png, id=127, 543.02875pt x 115.43124pt>
+<logos/pwr.png, id=131, 543.02875pt x 115.43124pt>
 File: logos/pwr.png Graphic file (type png)
  <use logos/pwr.png>
 Package pdftex.def Info: logos/pwr.png used on input line 38.
@@ -540,6 +540,12 @@ LaTeX Font Info:    External font `plex10' loaded for size
 ]
 Rozdzia\l  1.
 ("D:\SkyDrive\dyplom mgr\praca latex\chapters/1wstep.tex"
+Overfull \hbox (4.49638pt too wide) in paragraph at lines 6--7
+[]\OT4/cmr/m/n/12 Predykcja de-fek-tów opro-gra-mo-wa-nia wy-ko-rzy-stuje tech-
+niki eks-plo-ra-cji da-nych, gªów-
+ []
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [1
@@ -547,29 +553,38 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-])
-[2]
-Rozdzia\l  2.
-("D:\SkyDrive\dyplom mgr\praca latex\chapters/2wprowadzenie.tex" [3
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-]) [4]
+ [2])
+[3] [4
+
+]
+Rozdzia\l  2.
+("D:\SkyDrive\dyplom mgr\praca latex\chapters/2wprowadzenie.tex"
+Overfull \hbox (8.01997pt too wide) in paragraph at lines 56--57
+\OT4/cmr/m/n/12 Gªównym ce-lem ba-da« jest stwo-rze-nie na-rz¦-dzi w po-staci w
+ty-czek do ±ro-do-wi-ska KNIME,
+ []
+
+[5]) [6]
 Rozdzia\l  3.
 ("D:\SkyDrive\dyplom mgr\praca latex\chapters/3infrastruktura-pomiarowa.tex"
 
-LaTeX Warning: Citation `brak_refa' on page 5 undefined on input line 44.
+LaTeX Warning: Citation `brak_refa' on page 7 undefined on input line 48.
 
-[5
+[7
 
-]) [6]
+]) [8]
 Rozdzia\l  4.
 ("D:\SkyDrive\dyplom mgr\praca latex\chapters/4modele.tex"
-<img/projekty.png, id=312, 531.48563pt x 106.14656pt>
+<img/projekty.png, id=351, 531.48563pt x 106.14656pt>
 File: img/projekty.png Graphic file (type png)
  <use img/projekty.png>
 Package pdftex.def Info: img/projekty.png used on input line 26.
 (pdftex.def)             Requested size: 441.01775pt x 88.08057pt.
 
-<img/wyniki.png, id=313, 486.31688pt x 768.62157pt>
+<img/wyniki.png, id=352, 486.31688pt x 768.62157pt>
 File: img/wyniki.png Graphic file (type png)
  <use img/wyniki.png>
 Package pdftex.def Info: img/wyniki.png used on input line 33.
@@ -578,104 +593,82 @@ Package pdftex.def Info: img/wyniki.png used on input line 33.
 
 LaTeX Warning: Float too large for page by 13.09761pt on input line 34.
 
+[9
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[7
-
- <D:/SkyDrive/dyplom mgr/praca latex/img/projekty.png>]
-<charts/ant0.png, id=321, 602.25pt x 401.5pt>
+ <D:/SkyDrive/dyplom mgr/praca latex/img/projekty.png>] [10 <D:/SkyDrive/dyplom
+ mgr/praca latex/img/wyniki.png>]
+<charts/ant0.png, id=367, 481.8pt x 321.1197pt>
 File: charts/ant0.png Graphic file (type png)
  <use charts/ant0.png>
-Package pdftex.def Info: charts/ant0.png used on input line 51.
-(pdftex.def)             Requested size: 441.01775pt x 294.02376pt.
+Package pdftex.def Info: charts/ant0.png used on input line 56.
+(pdftex.def)             Requested size: 441.01775pt x 293.94904pt.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<charts/ant1.png, id=322, 602.25pt x 401.5pt>
+<charts/ant1.png, id=368, 481.8pt x 321.1197pt>
 File: charts/ant1.png Graphic file (type png)
  <use charts/ant1.png>
-Package pdftex.def Info: charts/ant1.png used on input line 57.
-(pdftex.def)             Requested size: 441.01775pt x 294.02376pt.
+Package pdftex.def Info: charts/ant1.png used on input line 62.
+(pdftex.def)             Requested size: 441.01775pt x 293.94904pt.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<charts/ant2.png, id=323, 602.25pt x 401.5pt>
+<charts/ant2.png, id=369, 481.8pt x 321.1197pt>
 File: charts/ant2.png Graphic file (type png)
  <use charts/ant2.png>
-Package pdftex.def Info: charts/ant2.png used on input line 63.
-(pdftex.def)             Requested size: 441.01775pt x 294.02376pt.
+Package pdftex.def Info: charts/ant2.png used on input line 68.
+(pdftex.def)             Requested size: 441.01775pt x 293.94904pt.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<charts/ecf0.png, id=324, 602.25pt x 401.5pt>
+<charts/ecf0.png, id=370, 481.8pt x 321.1197pt>
 File: charts/ecf0.png Graphic file (type png)
  <use charts/ecf0.png>
-Package pdftex.def Info: charts/ecf0.png used on input line 73.
-(pdftex.def)             Requested size: 441.01775pt x 294.02376pt.
+Package pdftex.def Info: charts/ecf0.png used on input line 78.
+(pdftex.def)             Requested size: 441.01775pt x 293.94904pt.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<charts/ecf1.png, id=325, 602.25pt x 401.5pt>
+<charts/ecf1.png, id=371, 481.8pt x 321.1197pt>
 File: charts/ecf1.png Graphic file (type png)
  <use charts/ecf1.png>
-Package pdftex.def Info: charts/ecf1.png used on input line 79.
-(pdftex.def)             Requested size: 441.01775pt x 294.02376pt.
+Package pdftex.def Info: charts/ecf1.png used on input line 84.
+(pdftex.def)             Requested size: 441.01775pt x 293.94904pt.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<charts/ecf2.png, id=326, 602.25pt x 401.5pt>
+<charts/ecf2.png, id=372, 481.8pt x 321.1197pt>
 File: charts/ecf2.png Graphic file (type png)
  <use charts/ecf2.png>
-Package pdftex.def Info: charts/ecf2.png used on input line 85.
-(pdftex.def)             Requested size: 441.01775pt x 294.02376pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-) [8] [9 <D:/SkyDrive/dyplom mgr/praca latex/img/wyniki.png>] [10 <D:/SkyDrive/
-dyplom mgr/praca latex/charts/ant0.png (PNG copy)> <D:/SkyDrive/dyplom mgr/prac
-a latex/charts/ant1.png (PNG copy)>] [11 <D:/SkyDrive/dyplom mgr/praca latex/ch
-arts/ant2.png (PNG copy)> <D:/SkyDrive/dyplom mgr/praca latex/charts/ecf0.png (
-PNG copy)>] [12 <D:/SkyDrive/dyplom mgr/praca latex/charts/ecf1.png (PNG copy)>
- <D:/SkyDrive/dyplom mgr/praca latex/charts/ecf2.png (PNG copy)>]
+Package pdftex.def Info: charts/ecf2.png used on input line 90.
+(pdftex.def)             Requested size: 441.01775pt x 293.94904pt.
+) [11 <D:/SkyDrive/dyplom mgr/praca latex/charts/ant0.png>] [12 <D:/SkyDrive/dy
+plom mgr/praca latex/charts/ant1.png> <D:/SkyDrive/dyplom mgr/praca latex/chart
+s/ant2.png>] [13 <D:/SkyDrive/dyplom mgr/praca latex/charts/ecf0.png> <D:/SkyDr
+ive/dyplom mgr/praca latex/charts/ecf1.png>] [14 <D:/SkyDrive/dyplom mgr/praca 
+latex/charts/ecf2.png>]
 Rozdzia\l  5.
-("D:\SkyDrive\dyplom mgr\praca latex\chapters/5podsumowanie.tex") [13
+("D:\SkyDrive\dyplom mgr\praca latex\chapters/5podsumowanie.tex") [15
 
-] [14
+] [16
 
 ]
 ("D:\SkyDrive\dyplom mgr\praca latex\PredykcjaDefektowNaPoziomieMetod.lof")
 \tf@lof=\write5
 
-[15] [16
+[17] [18
 
 ]
 ("D:\SkyDrive\dyplom mgr\praca latex\PredykcjaDefektowNaPoziomieMetod.lot")
 \tf@lot=\write6
 
 ("D:\SkyDrive\dyplom mgr\praca latex\PredykcjaDefektowNaPoziomieMetod.bbl"
-[17] [18
+[19] [20
 
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [19]
+ [21]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [20]
+ [22]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [21])
-[22]
+ [23])
+[24]
 Dodatek A.
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 77.
-[23
+[25
 
 ]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 77.
@@ -684,7 +677,7 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 77.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 77.
 Package rerunfilecheck Info: File `PredykcjaDefektowNaPoziomieMetod.out' has no
 t changed.
-(rerunfilecheck)             Checksum: 98AD11CB648CD5AEC0D3CBD22C66AEC5;2475.
+(rerunfilecheck)             Checksum: 44BA28ACA1BFFD740F4D5B68D5CB059F;2550.
 
 
 LaTeX Warning: There were undefined references.
@@ -692,13 +685,13 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 77.
  ) 
 Here is how much of TeX's memory you used:
- 7035 strings out of 493921
- 106167 string characters out of 3133992
- 199129 words of memory out of 3000000
- 10053 multiletter control sequences out of 15000+200000
+ 7062 strings out of 493921
+ 106507 string characters out of 3139648
+ 199559 words of memory out of 3000000
+ 10069 multiletter control sequences out of 15000+200000
  15733 words of font info for 42 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 41i,19n,45p,1023b,506s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,19n,45p,1023b,508s stack positions out of 5000i,500n,10000p,200000b,50000s
 {D:/Program Files/_tex/miktex-portable-2.9.4757/fonts/enc/dvips/pl/plms.enc}{
 D:/Program Files/_tex/miktex-portable-2.9.4757/fonts/enc/dvips/pl/plit.enc}{D:/
 Program Files/_tex/miktex-portable-2.9.4757/fonts/enc/dvips/pl/plrm.enc}{D:/Pro
@@ -715,10 +708,10 @@ b><D:/Program Files/_tex/miktex-portable-2.9.4757/fonts/type1/public/pl/plti10.
 pfb><D:/Program Files/_tex/miktex-portable-2.9.4757/fonts/type1/public/pl/plti1
 2.pfb><D:/Program Files/_tex/miktex-portable-2.9.4757/fonts/type1/public/pl/plt
 i8.pfb>
-Output written on PredykcjaDefektowNaPoziomieMetod.pdf (27 pages, 329755 bytes)
+Output written on PredykcjaDefektowNaPoziomieMetod.pdf (29 pages, 724413 bytes)
 .
 PDF statistics:
- 484 PDF objects out of 1000 (max. 8388607)
- 123 named destinations out of 1000 (max. 500000)
- 294 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 531 PDF objects out of 1000 (max. 8388607)
+ 137 named destinations out of 1000 (max. 500000)
+ 302 words of extra memory for PDF output out of 10000 (max. 10000000)
 

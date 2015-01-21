@@ -392,8 +392,8 @@ FUNCTION {format.pages}
 { pages empty$
     { "" }
     { pages multi.page.check
- { "pages" pages n.dashify tie.or.space.connect }
- { "page" pages tie.or.space.connect }
+ { "" pages n.dashify tie.or.space.connect }
+ { "" pages tie.or.space.connect }
       if$
     }
   if$
@@ -440,8 +440,8 @@ FUNCTION {format.in.ed.booktitle}
 { booktitle empty$
     { "" }
     { editor empty$
- { "In " booktitle emphasize * }
- { "In " format.editors * ", " * booktitle emphasize * }
+ { "W: " booktitle emphasize * }
+ { "W: " format.editors * ", " * booktitle emphasize * }
       if$
     }
   if$
@@ -485,10 +485,10 @@ FUNCTION {format.article.crossref}
    warning$
    ""
  }
- { "In {\em " journal * "\/}" * }
+ { "W: {\em " journal * "\/}" * }
       if$
     }
-    { "In " key * }
+    { "W: " key * }
   if$
   " \cite{" * crossref * "}" *
 }
@@ -513,7 +513,7 @@ FUNCTION {format.crossref.editor}
 FUNCTION {format.book.crossref}
 { volume empty$
     { "empty volume in " cite$ * "'s crossref of " * crossref * warning$
-      "In "
+      "W: "
     }
     { "Volume" volume tie.or.space.connect
       " of " *
@@ -549,13 +549,13 @@ FUNCTION {format.incoll.inproc.crossref}
        crossref * warning$
        ""
      }
-     { "In {\em " booktitle * "\/}" * }
+     { "W: {\em " booktitle * "\/}" * }
    if$
  }
- { "In " key * }
+ { "W: " key * }
       if$
     }
-    { "In " format.crossref.editor * }
+    { "W: " format.crossref.editor * }
   if$
   " \cite{" * crossref * "}" *
 }
@@ -695,9 +695,10 @@ FUNCTION {inproceedings}
   new.block
   crossref missing$
     { format.in.ed.booktitle "booktitle" output.check
-      format.bvolume output
-      format.number.series output
-      format.pages output
+      %format.bvolume output
+      %format.number.series output
+      %format.pages output
+      format.vol.num.pages output
       address empty$
  { organization publisher new.sentence.checkb
    organization output

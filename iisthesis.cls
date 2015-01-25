@@ -228,15 +228,13 @@
 	 & &\ \ \large{kierunek studiów: Informatyka}\\
 	 & &\ \ specjalnoœæ: In¿ynieria oprogramowania\\
 	 & &\multicolumn{1}{c}{\rule{0pt}{1.5cm} \Large{Praca dyplomowa - magisterska}} \\
-	 & &\multicolumn{1}{p{13.5cm}}{\rule{0pt}{2cm}\centering\bfseries\sc\Large{\@title}} \\%newline
+	 & &\multicolumn{1}{p{13.5cm}}{\rule{0pt}{1cm}\centering\bfseries\sc\Large{\@title}} \\%newline
 	 & &\multicolumn{1}{c}{\rule{0pt}{1.5cm}\large\@author} \\
-	 & &\multicolumn{1}{p{13.5cm}}{\rule{0pt}{1cm}\small\begin{flushright}\noindent s³owa kluczowe:\\ \@slowaKluczowe\end{flushright}} \\
+	 & &\multicolumn{1}{p{13.5cm}}{\rule{0pt}{0cm}\small\begin{flushright}\noindent s³owa kluczowe:\\ \@slowaKluczowe\end{flushright}} \\
 	 & & \multicolumn{1}{p{13.5cm}}{
-		\begin{flushright}
-					\begin{tabular}{p{12.0cm}}
-							 \small krótkie streszczenie:\newline \@abstractSH
-					\end{tabular}
-		\end{flushright}
+          \begin{tabular}{p{2cm}p{11cm}}
+               & \small krótkie streszczenie:\newline \@abstractSH \newline\newline\newline \\
+          \end{tabular}
 %	 	\rule{0.5cm}{1cm}{\small krótkie streszczenie:\newline \@abstractSH}
 	 	} \\
 	 	& & \multicolumn{1}{p{13.5cm}}{
@@ -261,7 +259,7 @@
 		\begin{tabular}{|c|} \hline \small{piecz¹tka Instytutu, w którym}\\\small{student wykonywa³ pracê} \\ \hline \end{tabular}
 		\end{flushright}
 	\\
-	&\multicolumn{1}{>{\columncolor[gray]{0.0}}p{0.57cm}|}{} & \multicolumn{1}{c}{\rule{0pt}{0.7cm} \large{Wroc³aw \@date}} 
+	&\multicolumn{1}{>{\columncolor[gray]{0.0}}p{0.57cm}|}{} & \multicolumn{1}{c}{\rule{0pt}{0.9cm} \large{Wroc³aw \@date}} 
 		
 \end{tabular*}
 \end{flushleft}

@@ -1,0 +1,228 @@
+\paragraph{LOC.} Przyjêto, ¿e podstawow¹ metod¹ wyszukiwania b³êdów, stanowi¹c¹ punkt odniesienia, by³o przegl¹danie kodu Ÿród³owego od najmniejszej metody do najwiêkszej. Zatem sortuj¹c dane wejœciowe wed³ug kolumny \textit{LOC} niemalej¹co mo¿na obliczyæ a~nastêpnie wykreœliæ skutecznoœæ takiego przegl¹du. Wykresy na rysunku \ref{wedlug-loc} pokazuj¹, ¿e jest to w~przybli¿eniu zale¿noœæ liniowa, co udowadnia nisk¹ efektywnoœæ takich przegl¹dów. Taka metoda przegl¹du bêdzie dalej nazywana \textit{LOC}.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.49\textwidth]{charts/cost-ant-sorted}
+	\includegraphics[width=0.49\textwidth]{charts/cost-commons-lang-sorted}
+	\caption{Skutecznoœæ przegl¹du LOC dla projektów Ant i~Commons Lang}
+	\label{wedlug-loc}
+\end{figure}
+
+\paragraph{Random Forest.} W~licznych badaniach, m.in. \cite{hata2012bug, kamei2010revisiting, lessmann2008benchmarking, liaw2002classification, mende2010effort} wykazano wysok¹ skutecznoœæ metody Random Forest w~predykcji defektów. Ponadto udzia³ metod z~b³êdami jest niewielki, w~zwi¹zku z~czym modele predykcji maj¹ tendencjê do klasyfikowania wszystkich elementów do klasy \textit{0}. Zauwa¿ono takie zachowanie podczas stosowania regresji logistycznej w~\cite{hata2012bug}. Problem ten nie dotyka tej metody. Metoda Random Forest polega na tworzeniu du¿ej liczby drzew decyzyjnych a~nastêpnie przypisaniu klasy na podstawie dominanty (najczêstszej wartoœci) spoœród wszystkich wyników czêœciowych.
+
+
+W tabeli \ref{wyniki} zawarto wyniki predykcji z~u¿yciem metody LOC oraz Random Forest. Wyniki powy¿ej 60\% zaznaczono pogrubion¹ czcionk¹. Uzyskane rezultaty potwierdzaj¹ wysok¹ skutecznoœæ algorytmu Random Forest. W~kolejnej tabeli \ref{wyniki-rf} umieszczono wyniki pozosta³ych miar skutecznoœci dla algorytmu Random Forest.
+
+Metoda podstawowa (LOC) cechuje siê efektywnoœci¹ na poziomie œrednim 27,4\% ($\sigma=10,4$). Wynik uzyskany dla RandomForest wynosi œrednio 54,4\% ($\sigma=9,8$).
+
+\begin{table}[htbp]
+	\caption{Efektywnoœæ predykcji defektów pod wzglêdem wysi³ku. Procent znalezionych b³êdów w~20\% kodu.}
+	\label{wyniki}
+	\begin{center}
+		\tabcolsep=0.11cm
+		\begin{tabular}{@{}lrr@{}}
+			\toprule
+			\bf Nazwa projektu &
+			\bf LOC &
+			\bf RandomForest
+			\\
+			\midrule
+			ECF                  & 30 & \bf63 \\
+			Ant                  & 19 & 49 \\
+			JMeter               & 25 & \bf68 \\
+			Commons Lang         & 32 & 49 \\
+			AspectJ              & 18 & 59 \\
+			CXF                  & 43 & 58 \\
+			Isis                 & 26 & 32 \\
+			Commons Email        & 15 & 54 \\
+			Commons JXPath       & 34 & \bf60 \\
+			Commons Logging      & 0  & 50 \\
+			Commons Net          & 28 & 40 \\
+			Accumulo             & 32 & \bf68 \\
+			Karaf                & 24 & 43 \\
+			ActiveMQ             & 19 & 55 \\
+			Hive                 & 40 & 54 \\
+			James Mailbox        & 35 & 50 \\
+			Jackrabbit FileVault & 38 & \bf64 \\
+			OpenJPA              & 34 & 50 \\
+			Jackrabbit Oak       & 34 & \bf66 \\
+			TomEE                & 19 & 41 \\
+			Tika                 & 38 & 46 \\
+			Lucene - Core        & 44 & 56 \\
+			Solr                 & 43 & 50 \\
+			Mahout               & 30 & 52 \\
+			Apache Gora          & 9  & \bf64 \\
+			Flume                & 18 & 46 \\
+			Nutch                & 25 & \bf60 \\
+			Apache Knox          & 17 & 52 \\
+			Phoenix              & 24 & \bf69 \\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+\end{table}
+
+
+
+\begin{table}[htbp]
+	\caption{Skutecznoœæ predykcji defektów z~wykorzystaniem algorytmu Random Forest}
+	\label{wyniki-rf}
+	\begin{center}
+		\begin{tabular}{@{}lS[table-format=1.3]S[table-format=1.3]S[table-format=1.3]@{}}
+			\toprule
+			\bf Nazwa projektu &
+			\bf $A$ &
+			\bf $\kappa$ &
+			\bf $AUC$
+			\\
+			\midrule
+			ECF                  & 0,985 & 0,594 & 0,760 \\
+			Ant                  & 0,964 & 0,473 & 0,758 \\
+			JMeter               & 0,971 & 0,639 & 0,815 \\
+			Commons Lang         & 0,989 & 0,444 & 0,737 \\
+			AspectJ              & 0,979 & 0,399 & 0,776 \\
+			CXF                  & 0,975 & 0,255 & 0,795 \\
+			Isis                 & 0,999 & 0,105 & 0,547 \\
+			Commons Email        & 0,957 & 0,000 & 0,697 \\
+			Commons JXPath       & 0,988 & 0,622 & 0,790 \\
+			Commons Logging      & 0,971 & 0,447 & 0,767 \\
+			Commons Net          & 0,941 & 0,320 & 0,757 \\
+			Accumulo             & 0,960 & 0,466 & 0,829 \\
+			Karaf                & 0,982 & 0,094 & 0,631 \\
+			ActiveMQ             & 0,994 & 0,580 & 0,747 \\
+			Hive                 & 0,982 & 0,130 & 0,691 \\
+			James Mailbox        & 0,991 & 0,329 & 0,783 \\
+			Jackrabbit FileVault & 0,990 & 0,057 & 0,637 \\
+			OpenJPA              & 0,962 & 0,283 & 0,817 \\
+			Jackrabbit Oak       & 0,962 & 0,488 & 0,817 \\
+			TomEE                & 0,963 & 0,528 & 0,785 \\
+			Tika                 & 0,960 & 0,425 & 0,693 \\
+			Lucene - Core        & 0,973 & 0,288 & 0,760 \\
+			Solr                 & 0,993 & 0,425 & 0,719 \\
+			Mahout               & 0,969 & 0,450 & 0,747 \\
+			Apache Gora          & 0,992 & 0,316 & 0,832 \\
+			Flume                & 0,977 & 0,323 & 0,704 \\
+			Nutch                & 0,967 & 0,582 & 0,788 \\
+			Apache Knox          & 0,995 & 0,450 & 0,747 \\
+			Phoenix              & 0,978 & 0,461 & 0,875 \\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+\end{table}
+
+
+Na kolejnych rysunkach zamieszczono wykresy krzywej efektywnoœci dla algorytmu Random Forest, dla pierwszych szeœciu projektów. Im bardziej stroma jest krzywa efektywnoœci tym lepsza efektywnoœæ przeszukiwania kodu Ÿród³owego.
+
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=.49\textwidth]{charts/cost-org-eclipse-ecf-rf}
+	\includegraphics[width=.49\textwidth]{charts/cost-ant-rf}
+	\caption{Krzywa efektywnoœci --- ECF i~Ant}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=.49\textwidth]{charts/cost-jmeter-rf}
+	\includegraphics[width=.49\textwidth]{charts/cost-commons-lang-rf}
+	\caption{Krzywa efektywnoœci --- JMeter i~Commons Lang}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=.49\textwidth]{charts/cost-org-aspectj-rf}
+	\includegraphics[width=.49\textwidth]{charts/cost-cxf-rf}
+	\caption{Krzywa efektywnoœci --- AspectJ i~CXF}
+\end{figure}
+
+Tabele \ref{conf1} - \ref{conf3} zawieraj¹ macierze pomy³ek dla predykcji defektów w~poszczególnych projektach z~wykorzystaniem algorytmu Random Forest.
+
+\begin{table}[htbp]
+	\caption{Macierz pomy³ek --- ECF i~Ant}
+	\label{conf1}
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|}
+			\cline{3-4}
+			\multicolumn{2}{c}{} & \multicolumn{2}{|c|}{przewidywany} \\
+			\cline{3-4}
+			\multicolumn{2}{c|}{} & 1 & 0 \\
+			\cline{1-4}
+			\multirow{2}{*}{rzeczywisty} & 1 	& 9060 & 131 \\
+			\cline{2-4}
+			& 0 								& 10 & 105 \\
+			\cline{1-4}
+		\end{tabular}
+		~
+		\begin{tabular}{|c|c|c|c|}
+			\cline{3-4}
+			\multicolumn{2}{c}{} & \multicolumn{2}{|c|}{przewidywany} \\
+			\cline{3-4}
+			\multicolumn{2}{c|}{} & 1 & 0 \\
+			\cline{1-4}
+			\multirow{2}{*}{rzeczywisty} & 1 	& 8642 & 255 \\
+			\cline{2-4}
+			& 0 								& 71 & 152 \\
+			\cline{1-4}
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\begin{table}[htbp]
+	\caption{Macierz pomy³ek --- JMeter i~Commons Lang}
+	\label{conf2}
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|}
+			\cline{3-4}
+			\multicolumn{2}{c}{} & \multicolumn{2}{|c|}{przewidywany} \\
+			\cline{3-4}
+			\multicolumn{2}{c|}{} & 1 & 0 \\
+			\cline{1-4}
+			\multirow{2}{*}{rzeczywisty} & 1 	& 208 & 57 \\
+			\cline{2-4}
+			& 0 								& 157 & 7170 \\
+			\cline{1-4}
+		\end{tabular}
+		~
+		\begin{tabular}{|c|c|c|c|}
+			\cline{3-4}
+			\multicolumn{2}{c}{} & \multicolumn{2}{|c|}{przewidywany} \\
+			\cline{3-4}
+			\multicolumn{2}{c|}{} & 1 & 0 \\
+			\cline{1-4}
+			\multirow{2}{*}{rzeczywisty} & 1 	& 11 & 2 \\
+			\cline{2-4}
+			& 0 								& 23 & 2519 \\
+			\cline{1-4}
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\begin{table}[htbp]
+	\caption{Macierz pomy³ek --- AspectJ i~CXF}
+	\label{conf3}
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|}
+			\cline{3-4}
+			\multicolumn{2}{c}{} & \multicolumn{2}{|c|}{przewidywany} \\
+			\cline{3-4}
+			\multicolumn{2}{c|}{} & 1 & 0 \\
+			\cline{1-4}
+			\multirow{2}{*}{rzeczywisty} & 1 	& 134 & 72 \\
+			\cline{2-4}
+			& 0 								& 301 & 17583 \\
+			\cline{1-4}
+		\end{tabular}
+		~
+		\begin{tabular}{|c|c|c|c|}
+			\cline{3-4}
+			\multicolumn{2}{c}{} & \multicolumn{2}{|c|}{przewidywany} \\
+			\cline{3-4}
+			\multicolumn{2}{c|}{} & 1 & 0 \\
+			\cline{1-4}
+			\multirow{2}{*}{rzeczywisty} & 1 	& 182 & 409 \\
+			\cline{2-4}
+			& 0 								& 577 & 38973 \\
+			\cline{1-4}
+		\end{tabular}
+	\end{center}
+\end{table}
+

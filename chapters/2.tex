@@ -1,0 +1,254 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Zwi¹zek z~innymi pracami}
+
+\noindent Na pocz¹tku prac dokonano przegl¹du literatury aby okreœliæ aktualny stan wiedzy (ang. \textit{state of the art}) w~badanej dziedzinie. Przegl¹d literatury pozwoli³ udzieliæ odpowiedzi na nastêpuj¹ce pytania:
+\begin{itemize}
+	\item {\bf Jakie istniej¹ metody predykcji defektów na poziomie metod i~jaka jest ich skutecznoœæ?}
+		\\Istnieje wiele modeli predykcji defektów, jednak wiêkszoœæ z~nich opiera siê na danych dotycz¹cych klas, pakietów lub modu³ów. Odpowiedzi¹ na powy¿sze pytanie jest zbiór modeli predykcji defektów na niskim poziomie granulacji, na przyk³ad metod lub bloków kodu.
+	\item {\bf Jakie s¹ mo¿liwoœci usprawnienia lub rozwiniêcia istniej¹cych metod?}
+		\\Zosta³y zebrane wszelkie mo¿liwoœci ulepszenia lub rozszerzenia badañ wskazanych przez autorów, okreœlone np. jako ``Dalszy rozwój".
+	\item {\bf Jakie s¹ sposoby ekstrakcji zmian kodu Ÿród³owego na poziomie metod?}
+		\\Jakie s¹ sposoby porównywania wersji kodu Ÿród³owego, jakiego rodzaju dane (metryki) s¹ uzyskiwane.
+\end{itemize}
+
+Podczas wstêpnego rozpoznania dziedziny zauwa¿ono, ¿e liczba publikacji jest niewielka. W~zwi¹zku z~tym postanowiono przeprowadziæ wyszukiwanie w~dwóch etapach. W~pierwszym etapie przeszukano elektroniczne zbiory, natomiast w~drugim etapie przejrzano bibliografie pozyskanych publikacji a~tak¿e wszystkie publikacje ich autorów w~celu odnalezienia dodatkowych tekstów.
+
+\paragraph{Przeszukiwalne zbiory cyfrowe.}
+
+Przeszukano poni¿sze zbiory z~u¿yciem ustalonych wyra¿eñ, za pomoc¹ wyszukiwarek udostêpnianych w~postaci aplikacji internetowej:
+\begin{itemize}
+	\item IEEE Xplore,
+	\item Science Direct,
+	\item ACM Digital Library,
+	\item Springer Link,
+	\item ISI Web of Science.
+	%\item Engineering Village
+	%\item Wiley Online Library
+\end{itemize}
+
+Wybrano te zbiory poniewa¿ pokrywaj¹ one wiêkszoœæ publikacji in¿ynierii oprogramowania oraz s¹ u¿ywane jako Ÿród³a w~innych przegl¹dach z~tej dziedziny \cite{hall2012systematic, riaz2009systematic}.
+
+\paragraph{Szara literatura.}
+
+Wstêpne przeszukiwanie wykaza³o niewielk¹ iloœæ Ÿróde³ œciœle odpowiadaj¹cych zagadnieniu predykcji defektów na niskim poziomie granulacji. Aby pokryæ znaczn¹ czêœæ szarej literatury zdecydowano, aby przeszukaæ nastêpuj¹ce Ÿród³a:
+\begin{itemize}
+	\item Google Scholar.
+	\item Lista odnoœników w~znalezionych Ÿród³ach pierwotnych.
+		\\Zgodnie z~metod¹ œnie¿nej kuli \cite{goodman1961snowball} przejrzano listy referencji Ÿróde³ pierwotnych w~celu odnalezienia dodatkowych istotnych (relewantnych) publikacji.
+	\item Inne publikacje autorów znalezionych Ÿróde³ pierwotnych.
+		\\Przeszukano bazê DBLP \cite{DBLP:2014:Online} szukaj¹c wed³ug nazwisk autorów dotychczas zgromadzonych Ÿróde³ pierwotnych.
+\end{itemize}
+
+
+Po dokonaniu przegl¹du literatury oraz oceny znalezionych Ÿróde³, wybrano te najbardziej istotne z~punktu widzenia niniejszej pracy:
+\begin{itemize}
+	\item \textit{Declarative visitors to ease fine-grained source code mining with full history on billions of AST nodes.} \cite{dyer2013declarative}
+	\item \textit{Method-level bug prediction.} \cite{giger2012method}
+	\item \textit{Comparing fine-grained source code changes and code churn for bug prediction.} \cite{giger2011comparing}
+	\item \textit{Fault-prone Module Prediction Using Version Histories.} \cite{hata2012fault}
+	\item \textit{Reconstructing fine-grained versioning repositories with git for method-level bug prediction.} \cite{hata2010reconstructing}
+	\item \textit{Historage: fine-grained version control system for Java.} \cite{hata2011historage}
+	\item \textit{Bug prediction based on fine-grained module histories.} \cite{hata2012bug}
+\end{itemize}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Eksploracja danych}
+
+\noindent Obecnie na œwiecie gwomadzi siê ogrmone iloœci cyfrowych danych. Dane s¹ zbierane na ka¿dym kroku. Wed³ug badania IDC Digital Universe \cite{gantz2012digital} w~2012 roku cyfrowy wszechœwiat osi¹gn¹³ rozmiar 2,8 zettabajtów (1 ZB = $10^{21}$ B), a~w~latach 2012 do 2020 roku rozmiary cyfrowego wszechœwiata bêd¹ siê podwajaæ co dwa lata. Dane s¹ zbierane na ka¿dym kroku: bank zapisuje wszystkie nasze operacje finansowe --- wp³aty, wyp³aty, przelewy, historiê kredytu, p³atnoœci kart¹, itd.; podczas przegl¹dania internetu narzêdzia analityczne zapisuj¹ ka¿dy nasz krok; firma handlowa zapisuje w~systemie CRM (ang. \textit{Customer relationship management}) interakcje z~klientami, a~w~systemie finansowo-ksiêgowym informacje o~sprzeda¿y, zakupach, produktach w~magazynie, itd.; dostawca internetu (ISP) zapisuje wszystkie nasze ¿¹dania w~logach.
+
+Ogromne iloœci danych powoduj¹ niemo¿liwoœæ ich analizy przez ludzki rozum oraz odseparowanie u¿ytecznych danych od bezwartoœciowych. Zgodnie z~przywo³anym raportem w~2012 roku mo¿na by³o wykorzystaæ 23\% wszystkich danych, pod warunkiem, ¿e by³yby one otagowane i~przeanalizowane. Jednak tylko 3\% potencjalnie u¿ytecznych danych by³o otagowane a~0,5\% analizowane. Z~pomoc¹ przychodzi dziedzina zwana eksploracj¹ danych. Opiera siê ona na wykorzystaniu szybkoœci komputera do znajdowania niewidocznych dla cz³owieka prawid³owoœci w~zgromadzonych danych. Przyk³adowe obszary zastosowania eksploracji danych:
+\begin{itemize}
+	\item meteorologia --- prognozowanie pogody,
+	\item ekonomia --- rozpoznawanie trendów na rynkach finansowych,
+	\item medycyna --- stawianie diagnozy na podstawie symptomów,
+	\item marketing --- tworzenie reklam dopasowanych do odbiorcy,
+	\item bankowoœæ --- ocena ryzyka kredytowego,
+	\item biotechnologia --- analiza danych genetycznych.
+\end{itemize}
+Powy¿sza lista to bardzo ma³y wycinek mo¿liwoœci zastosowania eksploracji danych w~dzisiejszym œwiecie.
+
+Klasyfikacja metod eksploracji danych ze wzglêdu na cel eksploracji \cite{63810}:
+\begin{itemize}
+	\item Odkrywanie asocjacji --- odkrywanie interesuj¹cych zale¿noœci lub korelacji.
+	\item Klasyfikacja i~predykcja --- odkrywanie modeli opisuj¹cych zale¿noœci pomiêdzy klasyfikacj¹ obiektów a~ich charakterystyk¹, w~celu ich wykorzystania do klasyfikacji nowych obiektów.
+	\item Grupowanie --- znajdowanie zbiorów obiektów maj¹cych podobne cechy.
+	\item Analiza sekwencji i~przebiegów czasowych --- znajdowanie czêstych podsekwencji, trendów, podobieñstw, anomalii oraz cykli.
+	\item Odkrywanie charakterystyk --- znajdowanie zwiêz³ych opisów ogólnych w³asnoœci klas obiektów.
+	\item Eksploracja tekstu i~danych semistrukturalnych --- analiza danych tekstowych w~celu ich grupowania, klasyfikacji, wsparcia przeszukiwania.
+	\item Eksploracja www --- znajdowanie wzorców zachowañ u¿ytkowników Internetu.
+	\item Eksploracja grafów i~sieci spo³ecznoœciowych --- analiza struktur grafowych, które s¹ szeroko wykorzystywane do modelowania z³o¿onych obiektów, takich jak: zwi¹zki chemiczne, struktury bia³kowe, sieci spo³ecznoœciowe, sieci biologiczne, itd.
+	\item Eksploracja danych multimedialnych i~danych przestrzennych --- analiza i~eksploracja danych obejmuj¹cych obrazy, mapy, dŸwiêki, filmy, itp.
+	\item Wykrywanie punktów osobliwych --- wykrywanie obiektów, które odbiegaj¹ od ogólnego modelu.
+\end{itemize}
+
+W niniejszej pracy wykorzystano metody nale¿¹ce do grupy klasyfikacji i~predykcji. Klasyfikacja polega na przypisaniu zadanych elementów do ustalonych klas. Ka¿dy element mo¿e byæ przypisany tylko do jednej klasy. W~zadaniu predykcji defektów oprogramowania mo¿na wyró¿niæ dwie klasy: ``zawiera b³¹d" (oznaczana dalej jako \textit{1}, \textit{pozytywna}, \textit{true}) i~``nie zawiera b³êdu" (oznaczana dalej jako \textit{0}, \textit{negatywna}, \textit{false}). Jest to szczególny przypadek klasyfikacji, nazywany klasyfikacj¹ binarn¹. Wynik klasyfikacji mo¿na przedstawiæ w~postaci macierzy pomy³ek.
+
+\begin{table}[htbp]
+	\caption{Przyk³ad macierzy pomy³ek}
+	\label{macierz-pomylek}
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|}
+			\cline{3-4}
+			\multicolumn{2}{c}{} & \multicolumn{2}{|c|}{przewidywany} \\
+			\cline{3-4}
+			\multicolumn{2}{c|}{} & 1 & 0 \\
+			\cline{1-4}
+			\multirow{2}{*}{rzeczywisty} & 1 & $TP$ & $FN$ \\
+			\cline{2-4}
+			& 0 & $FP$ & $TN$ \\
+			\cline{1-4}
+		\end{tabular}
+	\end{center}
+\end{table}
+
+Tabela \ref{macierz-pomylek} jest przyk³adow¹ macierz¹ pomy³ek, w~której wartoœci liczbowe w~komórkach zosta³y zast¹pione etykietami oznaczaj¹cymi nastêpuj¹co:
+\begin{itemize}
+	\item TP (\textit{True Positive}) --- element poprawnie sklasyfikowany jako pozytywny;
+	\item TN (\textit{True Negative}) --- element poprawnie sklasyfikowany jako negatywny;
+	\item FP (\textit{False Positive}) --- element b³êdnie sklasyfikowany jako pozytywny;
+	\item FN (\textit{False Negative}) --- element b³êdnie sklasyfikowany jako negatywny.
+\end{itemize}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Uczenie maszynowe i~klasyfikacja}
+
+\noindent Uczenie siê maszyn jest dziedzin¹ nauki z~obszaru sztucznej inteligencji. Polega ono na zastosowaniu algorytmu, który na podstawie danych wejœciowych ma za zadanie dostarczaæ wiedzê i~wnioski, a~tak¿e doskonaliæ swoje dzia³anie. Dane wejœciowe s¹ zmiennymi niezale¿nymi i~s¹ one cechami badanych elementów. Informacja wyjœciowa jest zmienn¹ zale¿n¹ i~jest ni¹ wynik klasyfikacji. Algorytm dokonuj¹cy klasyfikacji nazywa siê modelem predykcji, a~sam proces --- predykcj¹. W~uczeniu maszynowym wyró¿nia siê dwa zbiory danych:
+\begin{itemize}
+	\item Zbiór treningowy --- sk³ada siê z~danych wejœciowych (zmiennych niezale¿nych) i~danych wyjœciowych (poprawnie przypisanych klas). Ten zbiór s³u¿y do trenowania modelu predykcji czyli do uczenia.
+	\item Zbiór testowy --- sk³ada siê z~tych samych elementów co zbiór treningowy, natomiast ma inne zastosowanie. S³u¿y do ewaluacji efektywnoœci modelu predykcji. Zmienna zale¿na jest porównywana z~wynikiem klasyfikacji, dziêki czemu mo¿liwe jest obliczenie skutecznoœci modelu predykcji.
+\end{itemize}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics{diagrams/uczenie-predykcja.pdf}
+	\caption{Wykorzystanie danych w~modelu predykcji}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Rola metryk w~in¿ynierii oprogramowania}
+\label{rola-metryk}
+
+\noindent Norma IEEE 1061-1998 \cite{749159} definiuje metrykê jako ``funkcjê odwzorowuj¹c¹ jednostkê oprogramowania w~wartoœæ liczbow¹. Ta wyliczona wartoœæ jest interpretowalna jako stopieñ spe³nienia pewnej w³asnoœci jakoœci jednostki oprogramowania."
+
+W in¿ynierii oprogramowania metryki s¹ wykorzystywane we wszystkich fazach procesu wytwarzania oprogramowania. Pozwalaj¹ na porównywanie ze sob¹ ró¿nych elementów lub ró¿nych projektów poniewa¿ s¹ danymi liczbowymi. W~fazie projektowania mog¹ s³u¿yæ m.in. do szacowania nak³adu pracy potrzebnego do realizacji projektu. W~fazie produkcji i~testów do mierzenia jakoœci aplikacji, wydajnoœci pracy czy z³o¿onoœci programu.
+
+Metryki mo¿na podzieliæ wed³ug ró¿nych kryeriów. Ze wzglêdu na typ artefaktu jaki opisuj¹ dzieli siê je na:
+\begin{itemize}
+	\item Metryki produktu (inaczej metryki kodu Ÿród³owego). S¹ bezpoœrednio wyliczane z~kodu Ÿród³owego programu. Przyk³adem takich metryk s¹:
+	\begin{itemize}
+		\item Zestaw metryk CK \cite{chidamber1994metrics}, do którego nale¿¹:
+		\begin{itemize}
+			\item uœrednione metody na klasê (ang. \textit{Weighted Methods per Class}, WMC),
+			\item g³êbokoœæ drzewa dziedziczenia (ang. \textit{Depth of Inheritance Tree}, DIT),
+			\item liczba dzieci (ang. \textit{Number of Children}, NOC),
+			\item zale¿noœæ miêdzy obiektami (ang. \textit{Coupling Between Objects}, CBO),
+			\item odpowiedzialnoœæ danej klasy (ang. \textit{Response For a~Class}, RFC),
+			\item brak spójnoœci metod (ang. \textit{Lack of Cohesion of Methods}, LCOM).
+		\end{itemize}
+		\item OO --- metryki obiektowe, np.:
+		\begin{itemize}
+			\item liczba atrybutów (ang. \textit{Number of attributes}, NOA),
+			\item liczba metod (ang. \textit{Number of methods}, NOM),
+			\item liczba dziedziczonych metod (ang. \textit{Number of methods inherited}, NOMI).
+		\end{itemize}
+		\item LOC --- liczba linii kodu.
+	\end{itemize}
+	\item Metryki procesu (inaczej metryki zmian). Okreœlaj¹ zmiennoœæ atrybutu w~czasie. Oblicza siê je dla zadanych przedzia³ów czasowych. Niezbêdna do ich obliczenia jest historia projektu, któr¹ mo¿na uzyskaæ dziêki systemom kontroli wersji (jak SVN czy Git). Przyk³ady metryk procesu:
+		\begin{itemize}
+			\item liczba modyfikacji (rewizji) pliku (ang. \textit{Number of Revisions}, NR),
+			\item liczba autorów zmieniaj¹cych plik (ang. \textit{Number of Distinct Commiters}, NDC),
+			\item liczba zmienionych linii kodu (ang. \textit{Number of Modified Lines}, NML),
+			\item wiek pliku (ang. \textit{Age}, AGE),
+			\item liczba refaktoryzacji pliku (ang. \textit{(Number of Refactorings}, NREF),
+			\item liczba dodanych (usuniêtych, zmienionych) metod,
+			\item liczba dodanych (usuniêtych, zmienionych) atrybutów.
+		\end{itemize}
+\end{itemize}
+
+Dodatkowo mo¿na podzieliæ metryki z~uwagi na cel pomiaru \cite{gorski2000inzynieria}:
+\begin{itemize}
+	\item metryki z³o¿onoœci,
+	\item metryki szacowania nak³adu,
+	\item metryki funkcjonalnoœci.
+\end{itemize}
+
+
+Model predykcji defektów to narzêdzie, które na podstawie wartoœci metryk danego projektu dokonuje wskazania defektów znajduj¹cych siê w~tym projekcie. Aby poprawnie zinterpretowaæ wskazania dostarczane przez model predykcji defektów nale¿y okreœliæ czym jest defekt. Norma 982.2 IEEE/ANSI \cite{26479} definiuje defekt jako anomaliê w~produkcie, która mo¿e byæ:
+\begin{itemize}
+	\item zaniechaniami i~niedoskona³oœciami znalezionymi podczas wczesnych faz cyklu ¿ycia oraz
+	\item b³êdami zawartymi w~oprogramowaniu wystarczaj¹co dojrza³ym do testowania lub dzia³ania.
+\end{itemize}
+
+Istniej¹ce badania wykaza³y, ¿e metryki procesu przewy¿szy³y metryki produktu w~kontekœcie budowania modeli predykcji defektów \cite{giger2012method, kamei2010revisiting, mende2009revisiting, ferzund2009empirical}. Z~tego powodu w~dalszej czêœci pracy zrezygnowano z~wykorzystania metryk produktu, bior¹c pod uwagê jedynie metryki procesu.
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Koszty zapewnienia jakoœci}
+
+\noindent W~in¿ynierii oprogramowania wystêpuje kilka ró¿nych definicji jakoœci. Na potrzeby niniejszej pracy przyjêto definicjê Kana \cite{kan2002metrics} ``brak defektów w~produkcie". Zarz¹dzanie jakoœci¹ oprogramowania polega na podejmowaniu dzia³añ maj¹cych na celu zapewnienie jakoœci tworzonego oprogramowania poprzez szereg testów, które wspieraj¹ ca³y proces rozwoju oprogramowania.
+\begin{itemize}
+	\item Na etapie zbierania wymagañ --- weryfikacja czy okreœlone wymagania bêd¹ mo¿liwe do zweryfikowania (przetestowania).
+	\item Na etapie projektowania --- zaplanowanie procesu testowego, wybór œrodowisk testowych.
+	\item Na etapie kodowania --- definiowanie i~realizacja scenariuszy i~przypadków testowych oraz rejestracja defektów.
+	\item Na etapie zamkniêcia projektu --- testy integracyjne, testy akceptacyjne, testy operacyjne.
+\end{itemize}
+
+\noindent Jak wykazano w~\cite{arisholm2010systematic} koszty zapewnienia jakoœci s¹ prawie proporcjonalne do wielkoœci modu³u. Dlatego badacze bior¹ pod uwagê wysi³ek zwi¹zany z~dzia³aniami maj¹cymi na celu zapewnienie jakoœci \cite{rahman2011bugcache, koru2008theory, menzies2010defect}. Zmniejszenie wysi³ku i~kosztu zwi¹zanego z~zapewnieniem jakoœci to obecnie jeden z~g³ównych kierunków badañ \cite{hata2012bug}.
+
+Podstawowym celem pracy dyplomowej jest stworzenie narzêdzi w~postaci wtyczek do œrodowiska KNIME, s³u¿¹cych do gromadzenia metryk oprogramowania z~systemów kontroli wersji oraz zgromadzenie jak najwiêkszej iloœci metryk w~publicznym repozytorium. Nastêpnym krokiem jest stworzenie modelu (modeli) predykcji defektów oraz ich ewaluacja, bior¹c pod uwagê wysi³ek zwi¹zany z~zapewnieniem jakoœci oprogramowania. Stworzenie narzêdzi pozwalaj¹cych na zautomatyzowane gromadzenie metryk z~dostêpnych projektów (na przyk³ad open source) pozwoli rozszerzyæ publiczne zbiory danych. Dziêki temu bêdzie mo¿liwe wykorzystanie tych danych do tworzenia modeli predykcji defektów oprogramowania dziêki: wiêkszym zbiorom ucz¹cym; ewaluacji modeli na wiêkszych zbiorach danych.
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Systemy kontroli wersji jako Ÿród³o danych o~projektach}
+
+\noindent Jak wspomniano wczeœniej w~rozdziale \ref{rola-metryk} aby obliczyæ metryki procesu, konieczne jest uzyskanie historii projektu. Przegl¹d literatury pozwoli³ na wyodrêbnienie sposobów i~narzêdzi, które pozwalaj¹ na porównywanie ró¿nych wersji kodu Ÿród³owego. Jak wykazano w~\cite{kamei2010revisiting, posnett2011ecological, nguyen2010studying} predykcja na poziomie plików jest bardziej efektywna ni¿ na poziomie pakietów. Id¹c dalej w~kierunku uszczegó³owienia wyników predykcji, mo¿na przypuszczaæ, ¿e predykcja na poziomie metod by³aby skuteczniejsza ni¿ na poziomie plików. Badanie \cite{hata2012bug} wykaza³o, ¿e pliki zawieraj¹ce b³êdy zawieraj¹ prawie lub ponad 10 metod, natomiast tylko kilka metod zawiera b³êdy (mediana 1--2). Jest to nie tylko odpowiedŸ na pytanie czy predykcja na poziomie metod jest skuteczniejsza, ale równie¿ wskazanie przyczyny takiego stanu rzeczy. Jednak¿e aby w~pe³ni wykorzystaæ mo¿liwoœci ograniczenia kosztów jakoœci poprzez predykcjê na poziomie metod, potrzebne s¹ skuteczne modele, dostarczaj¹ce wiarygodnych wyników.
+
+Ze wzglêdu na powy¿sze zale¿noœci, podjêto decyzjê o~prowadzeniu dalszych prac w~kierunku budowy modeli predykcji na poziomie metod. Poni¿ej wypisano techniki porównywania kodu Ÿród³owego na poziomie metod.
+\begin{itemize}
+	\item ChangeDistiller \cite{fluri2007change} --- polega na odwzorowaniu kodu Ÿród³owego Java w~strukturze drzewiastej, jak¹ jest AST (ang. \textit{Abstract Syntax Tree}) a~nastêpnie wyodrêbnieniu zmian pomiêdzy dwiema wersjami przy u¿yciu algorytmów porównywania drzew.
+	\item Historage \cite{hata2011historage} --- wykorzystuje system kontroli wersji Git do przechowywania zidentyfikowanych zmian w~kodzie na niskim poziomie.
+	\item APFEL \cite{zimmermann2006fine} --- jest wtyczk¹ do œrodowiska Eclipse, która zbiera w~bazie danych niskopoziomowe zmiany w~kodzie. Dzia³a z~systemem kontroli wersji CVS i~Ÿród³ami Java.
+	\item C-REX \cite{hassan2004c} --- wyodrêbnia fakty z~historii kodu Ÿród³owego jêzyka C, a~nastêpnie porównuje ze sob¹ kolejne wersje.
+	\item Kenyon \cite{bevan2005facilitating}.
+	\item Beagle \cite{godfrey2005using}.
+\end{itemize}
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Historia b³êdów w~projektach}
+\label{linkowanie-bledow}
+
+\noindent Metryki, które stanowi¹ dane wejœciowe w~modelach predykcji s¹ zmiennymi niezale¿nymi (ang. \textit{independent variables}). Pe³ny zestaw danych potrzebny do wytrenowania modelu obejmuje tak¿e zmienne zale¿ne (ang. \textit{dependent variables}). Zmienna niezale¿na reprezentuje wyjœcie (wynik), oraz mo¿e byæ u¿ywana do testowania modelu, ¿eby oceniæ jego skutecznoœæ. W~predykcji defektów oprogramowania zmienn¹ zale¿n¹ jest liczba b³êdów lub zmienna okreœlaj¹ca czy wystêpuje b³¹d.
+
+Aby uzyskaæ informacje o~b³êdach w~projekcie stosuje siê metody linkowania b³êdów. Linkowanie polega na odszukaniu powi¹zañ pomiêdzy zmian¹ zapisan¹ w~repozytorium kodu, a~b³êdem zg³oszonym w~systemie œledzenia zmian (ang. \textit{Issue Tracking System}, ITS), takim jak JIRA, Bugzilla, IBM Rational ClearQuest czy innym.
+
+Metoda u¿ywana w~tej pracy opiera siê na metodzie SZZ \cite{sliwerski2005changes}. Jej podstawow¹ zalet¹ jest porównywanie czasu naprawienia b³êdu zapisanego w~ITS z~czasem wys³ania poprawki do systemu kontroli wersji. Dziêki takiemu porównaniu wyklucza siê du¿¹ liczbê b³êdnych wskazañ, które wynikaj¹ z~niew³aœciwego lub przypadkowego przyporz¹dkowania b³êdu do zmiany kodu. Przyczyn¹ takich b³êdnych dopasowañ mo¿e byæ umieszczenie w~opisie zmiany ci¹gu numerycznego niebêd¹cego numerem b³êdu.
+
+
+
+
+

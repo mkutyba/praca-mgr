@@ -255,9 +255,7 @@
 	& &\ \ \textit{\small{b) kategorii BE 50 (po 50 latach podlegaj¹ce ekspertyzie)}}\\
 	& &\textit{\small{* niepotrzebne skreœliæ}}\\
 	& &
-		\begin{flushright}
-		\begin{tabular}{|c|} \hline \small{piecz¹tka Instytutu, w którym}\\\small{student wykonywa³ pracê} \\ \hline \end{tabular}
-		\end{flushright}
+		\rule{0pt}{1.5cm}
 	\\
 	&\multicolumn{1}{>{\columncolor[gray]{0.0}}p{0.57cm}|}{} & \multicolumn{1}{c}{\rule{0pt}{0.9cm} \large{Wroc³aw \@date}} 
 		

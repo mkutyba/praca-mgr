@@ -1,0 +1,111 @@
+Prawdopodobnie nie istniej¹ programy wolne od b³êdów. Z~ca³¹ pewnoœci¹ istniej¹ programy, które zawieraj¹ zbyt du¿¹ liczbê b³êdów. Ka¿dy kto tworzy oprogramowanie chcia³by aby by³o ono wolne od wad. Podstawowym narzêdziem pozwalaj¹cym na sprawdzenie czy program dzia³a poprawnie s¹ testy. Powstaj¹ coraz bardziej wyszukane metody i~metodyki testowania oprogramowania, a~wszystko po to aby oprogramowanie dzia³a³o zgodnie z~oczekiwaniami, czyli aby cechowa³o siê wysok¹ jakoœci¹. Testowanie i~inspekcje kodu pozwalaj¹ zapewniæ odpowiedni¹ jakoœæ oprogramowania, ale s¹ kosztowne. Bazuj¹c na zasadzie Pareto \cite{endres2003handbook} wiemy, ¿e oko³o 80\% defektów pochodzi z~20\% modu³ów \cite{concas2011distribution}. Wiedz¹c, które modu³y nale¿y poddaæ inspekcji, mo¿na znacznie obni¿yæ iloœæ pracy potrzebn¹ do znalezienia wiêkszoœci b³êdów, a~co za tym idzie znacz¹co zmniejszyæ koszt takich inspekcji.
+
+Kod Ÿród³owy oprogramowania zazwyczaj sk³ada siê z~wielu plików, które s¹ organizowane w~pakiety (ang. \textit{packages}). W~jêzyku Java pliki zawieraj¹ klasy (ang. \textit{class}), a~ka¿da klasa mo¿e zawieraæ metody (ang. \textit{method}). Powsta³o wiele metod predykcji defektów, na ró¿nych poziowach granulacji: od pakietów, przez pliki, klasy, metody, na pojedynczych zmianach (ang. \textit{hunk} \cite{ferzund2009empirical, ferzund2009software}) skoñczywszy \cite{hall2012systematic, catal2009systematic, d2010extensive, d2012evaluating}. Jak wykazano m.in. w~\cite{giger2012method} i~\cite{hata2012bug}, predykcja b³êdów na poziomie metod dostarcza dok³adniejszych danych na temat lokalizacji b³êdów, dziêki czemu ich odnajdywanie jest efektywniejsze.
+
+Predykcja defektów oprogramowania wykorzystuje techniki eksploracji danych, g³ównie s¹ to metody statystyczne i~metody uczenia maszynowego. Kluczowym elementem w~tych procesach s¹ w³aœnie dane. To na ich podstawie algorytmy uczenia maszynowego s¹ w~stanie formu³owaæ regu³y decyzyjne. W~in¿ynierii oprogramowania tymi danymi s¹ róznego rodzaju metryki oprogramowania. Podzia³ metryk oraz ich zastosowanie zosta³y szerzej opisane w~rozdziale \ref{rola-metryk}.
+
+Gromadzenie danych (metryk) z~projektów jest czasoch³onne, wymaga du¿o pracy --- pobierania lub kopiowania projektów, mocy obliczeniowej do wyliczenia metryk. Potrzebne jest stworzenie uniwersalnych rozwi¹zañ s³u¿¹cych do tego celu oraz nastawienie na mo¿liwoœæ rozszerzania zestawu narzêdzi, które mog¹ byæ ze sob¹ dowolnie zestawiane. Te wymagania spe³nia platforma DePress \cite{madeyski2014software}, która jest rozwijana przy udziale studentów i~pracowników Politechniki Wroc³awskiej oraz pracowników Capgemini Polska. Wiêcej informacji o~DePress zawarto w~rozdziale \ref{depress}.
+
+Wstêpne przeszukiwanie literatury wykaza³o niewielk¹ iloœæ Ÿróde³ œciœle odpowiadaj¹cych zagadnieniu predykcji defektów na niskim poziomie granulacji. Jest to g³ówny kierunek tych badañ a~ich celem jest przede wszystkim opracowanie nowego modelu, który mia³by s³u¿yæ do efektywnego wskazywania miejsc w~oprogramowaniu, w~których znajduj¹ siê b³êdy. Pozwololi³oby to na ograniczenie iloœci pracy potrzebnej do przejrzenia krytycznych miejsc i~naprawienia b³êdów.
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Cele pracy}
+
+\noindent Cele pracy dyplomowej:
+\begin{itemize}
+	\item Przegl¹d literatury pod k¹tem predykcji defektów oprogramowania, szczególnie na niskim poziomie granulacji.
+	\item Budowa nowych lub rozbudowa istniej¹cych narzêdzi s³u¿¹cych do wyliczenia metryk oprogramowania, wspó³pracuj¹cych z~wersjonowanymi repozytoriami kodu (wsparcie dla Git).
+	\item Zebranie danych z~projektów o~otwartych Ÿród³ach na potrzeby predykcji defektów.
+	\item Budowa modeli predykcji z~wykorzystaniem zebranych danych.
+	\item Ocena stworzonych narzêdzi oraz zebranych danych.
+	\item Ewaluacja modeli predykcji i~ocena ich skutecznoœci.
+\end{itemize}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Przeznaczenie narzêdzi}
+
+\noindent Narzêdzia stworzone w~ramach pracy dyplomowej wchodz¹ w~sk³ad platformy (ang. \textit{framework}) DePress\footnote{http://depress.io} (\textit{Defect Prediction in Software Systems}). Jest to rozszerzalna platforma pozwalaj¹ca na budowanie przep³ywu pracy (ang. \textit{workflow}) w~sposób graficzny, dziêki temu, ¿e jest oparta na projekcie KNIME. G³ównym celem DePress jest wspieranie analizy empirycznej oprogramowania. Pozwala na zbieranie, ³¹czenie i~analizê danych z~ró¿nych Ÿróde³, jak repozytoria oprogramowania czy metryki.
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Ograniczenia dotycz¹ce realizacji}
+
+\noindent Poni¿ej wypisano ograniczenia dotycz¹ce realizacji badañ:
+\begin{itemize}
+	\item badanie tylko projektów o~otwartych Ÿród³ach (ang. \textit{open source}),
+	\item badanie tylko projektów napisanych w~jêzyku Java,
+	\item wykorzystanie narzêdzi platformy DePress, lub stworzenie nowych narzêdzi w~ramach platformy,
+	\item mo¿liwoœæ ³atwego, najlepiej zautomatyzowanego powtórzenia badania,
+	\item wykorzystanie jêzyka R~do budowy modeli predykcji defektów.
+\end{itemize}
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Metoda oceny}
+
+\noindent Podstawow¹ ocen¹ efektywnoœci tworzonych modeli by³a ocena oparta na wysi³ku (ang. \textit{effort-based evaluation}). Dla ka¿dego modelu zosta³a stworzona krzywa efektywnoœci, przyk³ad takiej krzywej przedstawia rysunek \ref{example-chart}. Porównanie efektywnoœci modeli polega przede wszystkim na porównaniu procentowej iloœci b³êdów znalezionych w~okreœlonej iloœci kodu. Przyjêto, ¿ê wartoœci¹ graniczn¹ kodu poddanego inspekcji bêdzie 20\%. Taka sama wartoœæ jest stosowana w~innych badaniach. W~przedstawionym przyk³adzie dokonuj¹c przegl¹du 20\% kodu, znajdzie siê w~nim 30\% encji z~defektami (w~przypadku tych badañ s¹ to metody).
+
+\begin{figure}[htbp]
+	\caption{Wykres krzywej efektywnoœci}
+	\label{example-chart}
+	\centering
+	\includegraphics[width=.75\textwidth]{charts/example}
+\end{figure}
+
+Dodatkowo zastosowano inne miary skutecznoœci klasyfikatorów, w~nawiasie zawarto symbol którym s¹ oznaczane:
+\begin{itemize}
+	\item dok³adnoœæ ($A$),
+	\item wspó³czynnik Kappa Cohena ($\kappa$),
+	\item powierzchnia pod krzyw¹ ROC ($AUC$).
+\end{itemize}
+
+\paragraph{Dok³adnoœæ,} ang. \textit{Accuracy}, $A$. Jest to stosunek poprawnie sklasyfikowanych instancji do wszystkich instancji. Maksymalna dok³adnoœæ wynosz¹ca 1 oznacza ca³kowit¹ zgodnoœæ wyniku predykcji z~rzeczywistymi klasami. Minimalna wartoœæ to 0.
+\begin{equation}
+	A=\frac{TP+TN}{TP+TN+FP+FN}
+\end{equation}
+
+\paragraph{Wspó³czynnik Kappa Cohena,} $\kappa$. Jest miar¹ statystyczn¹ okreœlaj¹c¹ zgodnoœæ pomiêdzy ró¿nymi klasyfikatorami. Bierze pod uwagê przypadkow¹ zgodnoœæ, dziêki czemu mo¿na okreœliæ czy dok³adnoœæ przewy¿sza poziom losowej dok³adnoœci. Wspó³czynnik sprawdza siê dobrze w~problemach gdzie licznoœæ instancji w~poszczególnych klasach nie jest równa. Maksymalna wartoœæ Kappa to 1 a~minimalna to -1.
+\begin{equation}
+	\kappa=\frac{A-RA}{1-RA} \qquad \textrm{gdzie } RA=\frac{(TP+FN)(TP+FP)+(TN+FP)(TN+FN)}{(TP+TN+FP+FN)^{2}}
+\end{equation}
+
+\paragraph{Powierzchnia pod krzyw¹ ROC,} ang. \textit{Area Under the Curve}, $AUC$. Klasyfikatory nie okreœlaj¹ samej przynale¿noœci do klasy, ale wartoœæ prawdopodobieñstwa z~jakim dana instancja nale¿y do danej klasy. Daje to mo¿liwoœæ wykreœlenia krzywej zale¿noœci pomiêdzy TP i~FP. Krzywa na wykresie okreœlana jest jako ROC (ang. \textit{Receiver Operating Characteristic}). Pole pod t¹ krzyw¹ reprezentuje skutecznoœæ klasyfikatora. Idealny klasyfikator uzyska wynik 1, natomiast losowy klasyfikator powinien uzyskaæ wynik 0,5. Wykres \ref{example-roc} przedstawia przyk³ad krzywej ROC.
+\begin{figure}[htbp]
+	\caption{Wykres krzywej ROC}
+	\label{example-roc}
+	\centering
+	\includegraphics[width=.5\textwidth]{charts/example-roc}
+\end{figure}
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Struktura pracy}
+
+\noindent Dalsza czêœæ pracy zosta³a podzielona w~nastêpuj¹cy sposób. W~rozdziale \ref{rozdzial2} opisano przegl¹d literatury oraz omówiono aktualny stan wiedzy. W~rozdziale \ref{rozdzial3} zawarto charakterystykê wykorzystanych narzêdzi, oprogramowania i~jêzyków. W~rozdziale \ref{rozdzial4} opisano przebieg badañ i~ich wyniki, natomiast w~rozdziale \ref{rozdzial5} przeanalizowano uzyskane rezultaty, podsumowano badanie pod k¹tem jego potencjalnego zastosowania i~mo¿liwoœci dalszego rozwoju. Rozdzia³ ten zawiera równie¿ istotny fragment dotycz¹cy zagro¿eñ dla wiarygodnoœci przeprowadzonego badania.
+

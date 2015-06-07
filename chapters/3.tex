@@ -1,0 +1,365 @@
+Badania zgodnie z~za≥oøeniami przeprowadzono w~úrodowisku KNIME rozszerzonym o~wtyczki z~DePress. Dodatkowo w~KNIME uøyto algorytmÛw klasyfikacji z~pakietu Weka.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{KNIME}
+
+\noindent KNIME jest platformπ do analizy danych, ktÛra umoøliwia wykonywanie zaawansowanych statystyk i~eksploracji danych, w~celu analizy trendÛw i~przewidywania wynikÛw. Wizualny zestaw narzÍdzi pozwala na pozyskiwani danych, przekszta≥canie ich, wstÍpne rozpoznanie, analizy predykcyjne i~wizualizacjÍ. KNIME daje rÛwnieø moøliwoúÊ tworzenia raportÛw na podstawie zgromadzonych informacji. KNIME Desktop jest oprogramowaniem o~otwartym kodzie (ang. \textit{open source}) udostÍpnianym na licencji GPL \cite{BCDG+07}.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=1\textwidth]{img/knime-gui}
+	\caption{Interejs KNIME. èrÛd≥o \cite{BCDG+07}}
+\end{figure}
+
+Platforma KNIME zawiera setki wÍz≥Ûw pozyskiwania danych, przetwarzania i~filtrowania, analizy i~eksploracji danych, wizualizacji i~innych. Oprogramowanie bazuje na platformie Eclipse\footnote{http://eclipse.org} i~jest rozszerzalne poprzez system wtyczek, dziÍki czemu znajduje zastosowanie w~komercyjnych úrodowiskach produkcyjnych jak i~úrodowiskach badawczych. Przyk≥ad procesu analizy i~eksploracji danych przedstawiono na rysunku \ref{knime-workflow}.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=1\textwidth]{img/knime-workflow}
+	\caption{Proces zbudowany w~KNIME. èrÛd≥o \cite{BCDG+07}}
+	\label{knime-workflow}
+\end{figure}
+
+\paragraph{Budowanie procesu.} Proces jest tworzony z~wÍz≥Ûw dostÍpnych w~programie. WÍz≥y umieszcza siÍ w~edytorze i~≥πczy ze sobπ. Sπ one podstawowymi jednostkami w~procesie. Kaødy wÍze≥ moøe mieÊ porty wejúciowe i~wyjúciowe. Dane sπ przekazywane pomiÍdzy wÍz≥ami z~portu wyjúciowego jednego wÍz≥a do portu wejúciowego innego wÍz≥a. Wyjúcie wÍz≥a mogπ stanowiÊ na przyk≥ad dane tabelaryczne, obraz, model zapisany w~PMML (ang. \textit{Predictive Model Markup Language}) i~inne.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=1\textwidth]{img/knime-connected-nodes}
+	\caption{WÍz≥y KNIME. èrÛd≥o \cite{BCDG+07}}
+\end{figure}
+
+WÍze≥ przed uøyciem musi zostaÊ skonfigurowany. Kaødy rodzaj wÍz≥a posiada swÛj zestaw parametrÛw konfigurowalnych za pomocπ interfejsu graficznego. Prawid≥owo skonfigurowany wÍze≥ moøe utowrzyÊ na wyjúciu tabelÍ danych, kÛtra moøe byÊ oglπdana w~wewnÍtrznym edytorze. OprÛcz tabeli danych niektÛre wÍz≥y udostÍpniajπ widoki. Widokiem moøe byÊ np. wykres, graf, tabela, itd. Widoki mogπ zawieraÊ elementy interaktywne pozwalajπce na dostosowywanie prezentowanych danych, zmianÍ uk≥adu, kolorÛw, typu wykresu, itp.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{R}
+
+\noindent R~jest darmowym úrodowiskiem i~jÍzykiem do obliczeÒ statystycznych i~wizualizacji. Jest podobny do jÍzyka i~úrodowiska S. Ma szerokie zastosowanie na úwiecie, jest podstawowym narzÍdziem w~bioinformatyce, uøywa siÍ go w~takich firmach jak Facebook, Google, Form, Mozilla czy Twitter. Wiele pakietÛw statystycznych (np. RapidMiner, KNIME) oferuje mechanizmy zapewniajπce wspÛ≥pracÍ z~R.
+
+R jest zbudowany w~architekturze modu≥owej. Jest rozszerzalny za pomocπ pakietÛw zawierajπcych dodatkowe funkcje lub dodatkowe narzÍdzia przeznaczone dla poszczegÛlnych dziedzin nauki. Zaletπ R~jest takøe moøliwoúÊ tworzenia wysokiej jakoúci grafik gotowych do publikacji. Tworzenie grafik jest uproszczone poprzez stosowanie gotowych szablonÛw, z~jednoczesnym zachowaniem moøliwoúci pe≥nej kontroli i~personalizacji przez uøytkownika. Ma takøe swÛj w≥asny format dokumentacji podobny do LaTeX.
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{DePress}
+\label{depress}
+
+\noindent DePress jest oparty wy≥πcznie na architekturze wtyczek KNIME, dziÍki czemu moøliwa jest integracja i~wspÛ≥dzia≥anie z~istniejπcymi wtyczkami. G≥Ûwnym zadaniem pakietu jest predykcja defektÛw oprogramowania. PoszczegÛlne wtyczki dostarczajπ odpowiednich funkcji w~zaleønoúci od ich przeznaczenia. Podzielono je na trzy g≥Ûwne grupy (rysunek \ref{depress-struktura}):
+\begin{itemize}
+	\item Adaptery --- pozwalajπ na pobieranie danych z~zewnÍtrznych narzÍdzi.
+	\item Generatory metryk --- wyliczajπ metryki na podstawie danych wejúciowych.
+	\item Inne --- dostarczajπ metod do dodatkowych przekszta≥ceÒ danych.
+\end{itemize}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=1\textwidth]{diagrams/depress.pdf}
+	\caption{Struktura DePress. èrÛd≥o \cite{madeyski2014software}}
+	\label{depress-struktura}
+\end{figure}
+
+DziÍki separacji wtyczek jest moøliwa ≥atwa zamiana jednej wtyczki na innπ. Na przyk≥ad gdy analizujπc projekt okaøe siÍ, øe zosta≥ on przeniesiony z~SVN do Git, wystarczy uøyÊ odpowiedniej wtyczki adaptera aby na nowo pobraÊ dane o~projekcie.
+
+W badaniu uøyto wtyczek adapterÛw Jira (Online) i~Bugzilla (Online) do pobierania danych o~zg≥oszonych b≥Ídach z~systemÛw úledzenia zagadnieÒ (ang. \textit{Issue Tracking System}, ITS). Istniejπce wtyczki adapterÛw do wspÛ≥pracy z~systemami kontroli wersji (SCM) okaza≥y siÍ nie wystarczajπce, poniewaø dostarczajπ tylko danych o~zmianach na poziomie klas. Potrzebne by≥o stworzenie nowej wtyczki AstMetrics do ekstrakcji zmian na niskim poziomie granulacji.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{AstMetrics}
+\label{metryki}
+
+\noindent Wtyczka AstMetrics w~pierwszej wersji zosta≥a napisana przez Piotra MitkÍ \cite{mitka}. Na potrzeby tego badania zosta≥a w~duøej czÍúci napisana od nowa i~poszerzona o~nowe metryki. Bazujπc na oprogramowaniu Change Distiller \cite{fluri2007change} dokonuje ona porÛwnania historycznych wersji kodu ürÛd≥owego kaødego pliku pobranego z~repozytorium. Kaøda wersja pliku jest odwzorowywana za pomocπ drzewa AST (ang. \textit{Abstract Syntax Tree}) a~nastÍpnie drzewa sπ porÛwnywane pomiÍdzy kolejnymi wersjami (patrz rysunek \ref{ast-compare}). Na tej podstawie jest moøliwe wykrycie zmian w~kodzie ürÛd≥owym na niskim poziomie granulacji. Zmiany sπ zapisywane w~tymczasowej bazie danych a~nastÍpnie sπ wyliczane z~nich metryki dla kaødej metody z~kaødej klasy znajdujπcej siÍ w~kodzie ürÛd≥owym.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=1\textwidth]{img/ast-compare}
+	\caption{PorÛwnanie drzewa AST. èrÛd≥o \cite{fluri2007change}}
+	\label{ast-compare}
+\end{figure}
+
+Metryki wyliczane w~pierwszej wersji wtyczki zosta≥y zawarte w~tabeli \ref{metryki1} a~dodane w~drugiej wersji wtyczki w~tabeli \ref{metryki2}.
+
+
+\begin{table}[htbp]
+	\caption{Metryki wyliczane w~pierwszej wersji wtyczki AstMetrics}
+	\label{metryki1}
+	\begin{center}
+		\begin{tabular}{@{}ll@{}}
+			\toprule
+			\bf Nazwa metryki &
+			\bf Opis \\
+			\midrule
+			allMethodHistories & ile razy metoda by≥a zmieniana w~historii                   \\
+			methodHistories    & ile razy metoda by≥a zmieniana w~danych przedziale czasowym \\
+			authors            & liczba autorÛw                                              \\
+			stmtAdded          & ≥πczna liczba dodanych instrukcji                           \\
+			maxStmtAdded       & maksymalna liczba dodanych instrukcji                       \\
+			avgStmtAdded       & úrednia liczba dodanych instrukcji                          \\
+			stmtUpdated        & ≥πczna liczba zmienionych instrukcji                        \\
+			maxsSmtUpdated     & maksymalna liczba zmienionych instrukcji                    \\
+			avgStmtUpdated     & úrednia liczba zmienionych instrukcji                       \\
+			stmtDeleted        & ≥πczna liczba usuniÍtych instrukcji                         \\
+			maxStmtDeleted     & maksymalna liczba usuniÍtych instrukcji                     \\
+			avgStmtDeleted     & úrednia liczba usuniÍtych instrukcji                        \\
+			stmtParentChanged  & ≥πczna liczba zmienionych instrukcji nadrzÍdnych            \\
+			churn              & suma stmtAdded i~stmtDeleted we wszystkich wersjach         \\
+			maxChurn           & maksymalna wartoúÊ churn na przestrzeni wersji              \\
+			avgChurn           & úrednia wartoúÊ churn na przestrzeni wersji                 \\
+			decl               & ≥πczna liczba zmian deklaracji metody                       \\
+			cond               & ≥πczna liczba zmian deklaracji warunkowych                  \\
+			elseAdded          & ≥πczna liczba dodanych czÍúci \textit{else}                 \\
+			elseDeleted        & ≥πczna liczba usuniÍtych czÍúci \textit{else}               \\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\begin{table}[htbp]
+	\caption{Metryki dodane w~drugiej wersji wtyczki AstMetrics}
+	\label{metryki2}
+	\begin{center}
+		\begin{tabular}{@{}ll@{}}
+			\toprule
+			\bf Nazwa metryki &
+			\bf Opis \\
+			\midrule
+			loopsAdded & ≥πczna liczba dodanych pÍtli \\
+			loopsUpdated & ≥πczna liczba zmienionych pÍtli \\
+			loopsDeleted & ≥πczna liczba usuniÍtych pÍtli \\
+			variablesAdded & ≥πczna liczba dodanych instrukcji deklaracji zmiennej \\
+			variablesUpdated & ≥πczna liczba zmienionych instrukcji deklaracji zmiennej \\
+			variablesDeleted & ≥πczna liczba usuniÍtych instrukcji deklaracji zmiennej \\
+			assigmentsAdded & ≥πczna liczba dodanych instrukcji przypisania \\
+			assigmentsUpdated & ≥πczna liczba zmienionych instrukcji przypisania \\
+			assigmentsDeleted & ≥πczna liczba usuniÍtych instrukcji przypisania \\
+			returnsAdded & ≥πczna liczba dodanych instrukcji \textit{return} \\
+			returnsUpdated & ≥πczna liczba zmienionych instrukcji \textit{return} \\
+			returnsDeleted & ≥πczna liczba usuniÍtych instrukcji \textit{return} \\
+			nullsAdded & ≥πczna liczba dodanych instrukcji zawierajπcych \textit{null} \\
+			nullsUpdated & ≥πczna liczba zmienionych instrukcji zawierajπcych \textit{null} \\
+			nullsDeleted & ≥πczna liczba usuniÍtych instrukcji zawierajπcych \textit{null} \\
+			casesAdded & ≥πczna liczba dodanych instrukcji warunkowych \textit{case} \\
+			casesUpdated & ≥πczna liczba zmienionych instrukcji warunkowych \textit{case} \\
+			casesDeleted & ≥πczna liczba usuniÍtych instrukcji warunkowych \textit{case} \\
+			breaksAdded & ≥πczna liczba dodanych instrukcji \textit{break} \\
+			breaksUpdated & ≥πczna liczba zmienionych instrukcji \textit{break} \\
+			breaksDeleted & ≥πczna liczba usuniÍtych instrukcji \textit{break} \\
+			objectsAdded & ≥πczna liczba dodanych instrukcji tworzπcych obiekt \\
+			objectsUpdated & ≥πczna liczba zmienionych instrukcji tworzπcych obiekt \\
+			objectsDeleted & ≥πczna liczba usuniÍtych instrukcji tworzπcych obiekt \\
+			catchesAdded & ≥πczna liczba dodanych blokÛw przechwytywania wyjπtku \\
+			catchesUpdated & ≥πczna liczba zmienionych blokÛw przechwytywania wyjπtku \\
+			catchesDeleted & ≥πczna liczba usuniÍtych blokÛw przechwytywania wyjπtku \\
+			throwsAdded & ≥πczna liczba dodanych blokÛw rzucania wyjπtku \\
+			throwsUpdated & ≥πczna liczba zmienionych blokÛw rzucania wyjπtku \\
+			throwsDeleted & ≥πczna liczba usuniÍtych blokÛw rzucania wyjπtku \\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+\end{table}
+
+Dodatkowo zaimplementowano drugie wyjúcie wtyczki z~wszystkimi historiami metod, tj. z~informacjami o~tym ktÛra metoda zosta≥a zmieniona w~danej wersji historycznej w~repozytorium kodu. W~zwiπzku z~tym, øe do repozytorium sπ zapisywane zmiany w~pojedycznych plikach, a~nie bardziej szczegÛ≥owe, wystπpi≥a potrzeba stworzenia takiego zestawienia. Struktura tworzonej tabeli danych zosta≥a przedstawiona w~tabeli \ref{ast-histories}. Dane historyczne s≥uøπ do wyszukiwania defektÛw w~kodzie ürÛd≥owym, ktÛre zosta≥o opisane w~rozdziale \ref{wyszukiwanie-defektow}.
+
+\begin{table}[htbp]
+	\caption{Struktura tabeli wyjúciowej z~danymi historycznymi wtyczki AstMetrics}
+	\label{ast-histories}
+	\begin{center}
+		\begin{tabular}{@{}ll@{}}
+			\toprule
+			\bf Nazwa kolumny &
+			\bf Opis \\
+			\midrule
+			MethodName & Nazwa metody                  \\
+			Author     & Autor zmiany                  \\
+			Message    & Opis zmiany                   \\
+			Date       & Data przes≥ania               \\
+			CommitID   & Unikalny identyfikator zmiany \\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+\end{table}
+
+Do prawid≥owego dzia≥ania wtyczki wymagane jest okreúlenie wartoúci parametrÛw:
+\begin{itemize}
+	\item dirname - katalog ze sklonowanym repozytorium git (np. \textit{C:/ant} lub \textit{/home/user/ant},
+	\item package - pakiet, ktÛry zostanie uwzglÍdniony w~tabelach wyjúciowych (np. \textit{org.apache.ant}),
+	\item exclude\_dir - katalog, ktÛry zostanie wy≥πczony z~pobieranai danych (np. \textit{src/tests}),
+	\item bottom\_commit - identyfikator rewizji poczπtkowej, dozwolone jest podanie identyfikatora SHA-1, tagu poprzedzonego napisem \textit{tag:} lub napis \textit{initial} oznaczajπcego pierwszπ (najstarszπ) rewizjÍ w~repozytorium,
+	\item top\_commit - identyfikator rewizji koÒcowej, czyli rewizji dla ktÛrej zostanπ obliczone metryki, dozwolone jest podanie identyfikatora SHA-1 lub tagu poprzedzonego napisem \textit{tag:},
+	\item top\_commit\_post\_rel - identyfikator rewizji zamykajπcej, pomiÍdzy tπ wersjπ a~wersjπ \textit{top\_commit} zostanie pobrana historia repozytorium, dozwolone jest podanie identyfikatora SHA-1, tagu poprzedzonego napisem \textit{tag:} lub napis \textit{current} oznaczajπcego ostatniπ (najnowszπ) rewizjÍ w~repozytorium.
+\end{itemize}
+
+Dzia≥anie wtyczki obrazuje rysunek \ref{ast-metrics-process}.
+
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=1\textwidth]{diagrams/ast-metrics-process.pdf}
+	\caption{Diagram aktywnoúci wtyczki AstMetrics}
+	\label{ast-metrics-process}
+\end{figure}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Gromadzenie metryk}
+
+\noindent Do trenowania i~oceny algorytmÛw klasyfikacji czÍsto stosuje siÍ walidacjÍ krzyøowπ, polegajπcπ na podziale zbioru danych na dwa podzbiory --- treningowy i~testowy --- a~nastÍpnie wykorzystaniu ich zgodnie z~przeznaczeniem. W~niniejszej pracy zastosowano inne podejúcie, polegajπce na wykorzystaniu dwÛch niezaleønych zbiorÛw danych z~dwÛch rÛønych wydaÒ oprogramowania. Metryki wersji A~pos≥uøy≥y jako zbiÛr treningowy a~metryki wersji B~jako zbiÛr testowy. Zaletπ takiego podejúcia jest lepsze dopasowanie do rzeczywistych warunkÛw wystÍpujπcych w~procesie wytwarzania oprogramowania. W~tabeli \ref{wersje} zawarto informacje o~przebadanym oprogramowaniu wraz z~oznaczeniami wersji A~i~B. Metryki zosta≥y wyliczone z~uøyciem wtyczki AstMetrics. Wprowadzono rÛwnieø dodatkowoπ metrykÍ pomocniczπ LOC (ang. \textit{ang. Lines of code}) - liczba linii kodu.
+
+\begin{table}[htbp]
+	\small
+	\caption{Przeglπd projektÛw wykorzystanych do badania}
+	\label{wersje}
+	\begin{center}
+		\begin{tabular}{@{}llll@{}}
+			\toprule
+			\bf Nazwa projektu &
+			\bf Wersja A &
+			\bf Wersja B &
+			\bf ITS
+			\\
+			\midrule
+			ECF                  & Root\_Release\_3\_0        & Root\_Release\_3\_1        & Bugzilla \\
+			Ant                  & ANT\_170                   & ANT\_180                   & Bugzilla \\
+			JMeter               & v2\_8                      & v2\_9                      & Bugzilla \\
+			Commons Lang         & LANG\_3\_0                 & LANG\_3\_1                 & JIRA     \\
+			AspectJ              & V1\_5\_0\_final            & V1\_6\_0                   & Bugzilla \\
+			CXF                  & cxf-2.7.0                  & cxf-3.0.0                  & JIRA     \\
+			Isis                 & isis-1.7.0                 & isis-1.8.0                 & JIRA     \\
+			Commons Email        & EMAIL\_1\_2                & EMAIL\_1\_3                & JIRA     \\
+			Commons JXPath       & JXPATH\_1\_1               & JXPATH\_1\_2               & JIRA     \\
+			Commons Logging      & LOGGING\_1\_0              & LOGGING\_1\_1\_0           & JIRA     \\
+			Commons Net          & NET\_2\_0                  & NET\_2\_2                  & JIRA     \\
+			Accumulo             & 1.5.2                      & 1.6.0                      & JIRA     \\
+			Karaf                & karaf-2.3.0                & karaf-2.4.0                & JIRA     \\
+			ActiveMQ             & activemq-5.8.0             & activemq-5.9.0             & JIRA     \\
+			Hive                 & release-1.0.0              & release-1.1.0              & JIRA     \\
+			James Mailbox        & apache-james-mailbox-0.3   & apache-james-mailbox-0.4   & JIRA     \\
+			Jackrabbit FileVault & jackrabbit-filevault-3.0.0 & jackrabbit-filevault-3.1.0 & JIRA     \\
+			OpenJPA              & 1.0.0                      & 2.0.0                      & JIRA     \\
+			Jackrabbit Oak       & jackrabbit-oak-1.0.0       & jackrabbit-oak-1.1.0       & JIRA     \\
+			TomEE                & tomee-1.5.0                & tomee-1.6.0                & JIRA     \\
+			Tika                 & 1.5                        & 1.6                        & JIRA     \\
+			Lucene - Core        & lucene\_solr\_4\_9\_0      & lucene\_solr\_4\_10\_0     & JIRA     \\
+			Solr                 & lucene\_solr\_4\_9\_0      & lucene\_solr\_4\_10\_0     & JIRA     \\
+			Mahout               & mahout-0.6                 & mahout-0.7                 & JIRA     \\
+			Apache Gora          & apache-gora-0.3            & apache-gora-0.4            & JIRA     \\
+			Flume                & release-1.4.0              & release-1.5.0              & JIRA     \\
+			Nutch                & release-2.1                & release-2.2                & JIRA     \\
+			Apache Knox          & v0.4.0-release             & v05.0-release              & JIRA     \\
+			Phoenix              & v4.2.0                     & v4.3.0                     & JIRA     \\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+\end{table}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Gromadzenie danych o~defektach}
+\label{wyszukiwanie-defektow}
+
+\noindent Pe≥na informacja wejúciowa do trenowania i~testowania algorytmu klasyfikacji musi zawieraÊ jeszcze dane o~b≥Ídach. Aby uzyskaÊ te dane zastosowano metodÍ linkowania b≥ÍdÛw wed≥ug poniøszego algorytmu:
+\begin{enumerate}
+	\item Wylistowanie wszystkich metod wchodzπcych w~sk≥ad wydanej wersji oprogramowania.
+	\item Pobranie historii metod za pomocπ AstMetrics od daty wydania wersji do daty koÒcowej projektu.
+	\item Znalezienie rewizji naprawiajπcych b≥πd.
+	\item PorÛwnanie daty naprawienia b≥Ídu z~datπ ustawionπ w~systemie úledzenia zagadnieÒ i~wyeliminowanie niezgodnych wpisÛw.
+	\item Zliczenie unikalnych numerÛw b≥Ídu dla danej metody i~zapisanie wartoúci jako liczba b≥ÍdÛw.
+	\item Oznaczenie metod, ktÛre zosta≥y zmienione w~commitach naprawiajπcych b≥πd jako metod zawierajπcych b≥πd (\textit{1}).
+	\item Oznaczenie pozosta≥ych metod jako nie zawierajπcych b≥Ídu (\textit{0}).
+\end{enumerate}
+
+Proces zosta≥ zaprojektowany w~úrodowisku KNIME, w~dwÛch wersjach: z~systemem úledzenia zagadnieÒ Bugzilla i~JIRA. Proces by≥ uruchamiany automatycznie z~poziomu úrodowiska R, dziÍki wykorzystaniu trybu wsadowego KNIME (ang. \textit{batch mode}). Parametry konfiguracyjne by≥y przekazywane za pomocπ zmiennych (ang. \textit{workflow variables}). WspÛ≥dzia≥anie úrodowiska KNIME i~R zosta≥o zobrazowane na rysunku \ref{r-knime}.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.5\textwidth]{diagrams/r-knime.pdf}
+	\caption{Przebieg badania w úrodowisku R i KNIME}
+	\label{r-knime}
+\end{figure}
+
+W tabeli \ref{wielkosc-projektow} zebrano dane dotyczπce wielkoúci projektÛw oraz liczby b≥ÍdÛw. Dane dotyczπ wersji B~kaødego projektu.
+
+\begin{table}[htbp]
+	\small
+	\caption{Statystyki projektÛw}
+	\label{wielkosc-projektow}
+	\begin{center}
+		\begin{tabular}{@{}lrrrrr@{}}
+			\toprule
+			\multirow{2}{*}{\bf Nazwa projektu} &
+			\multirow{2}{*}{\bf LOC} &
+			\bf IloúÊ &
+			\bf IloúÊ &
+			\bf B≥Ídnych &
+			\bf Udzia≥
+			\\
+			&
+			&
+			\bf metod &
+			\bf b≥ÍdÛw &
+			\bf metod &
+			\bf b≥Ídnych metod
+			\\
+			\midrule
+			ECF                  & 54 264  & 9 306  & 290   & 236 & 2,54\% \\
+			Ant                  & 60 715  & 9 120  & 480   & 407 & 4,46\% \\
+			JMeter               & 50 181  & 7 592  & 447   & 365 & 4,81\% \\
+			Commons Lang         & 15 802  & 2 555  & 37    & 34  & 1,33\% \\
+			AspectJ              & 120 367 & 18 090 & 595   & 435 & 2,40\% \\
+			CXF                  & 313 115 & 40 141 & 1 225 & 759 & 1,89\% \\
+			Isis                 & 111 699 & 25 449 & 19    & 18  & 0,07\% \\
+			Commons Email        & 1 202   & 210    & 13    & 9   & 4,29\% \\
+			Commons JXPath       & 12 652  & 1 531  & 35    & 35  & 2,29\% \\
+			Commons Logging      & 1 638   & 243    & 6     & 6   & 2,47\% \\
+			Commons Net          & 5 536   & 1 169  & 94    & 78  & 6,67\% \\
+			Accumulo             & 38 483  & 3 816  & 231   & 153 & 4,01\% \\
+			Karaf                & 192 685 & 28 565 & 661   & 544 & 1,90\% \\
+			ActiveMQ             & 66 861  & 10 582 & 116   & 102 & 0,96\% \\
+			Hive                 & 104 202 & 15 254 & 381   & 296 & 1,94\% \\
+			James Mailbox        & 14 258  & 2 130  & 20    & 20  & 0,94\% \\
+			Jackrabbit FileVault & 25 861  & 3 344  & 55    & 34  & 1,02\% \\
+			OpenJPA              & 174 748 & 36 954 & 1 378 & 944 & 2,55\% \\
+			Jackrabbit Oak       & 116 458 & 14 971 & 983   & 731 & 4,88\% \\
+			TomEE                & 9 535   & 1 091  & 63    & 56  & 5,13\% \\
+			Tika                 & 31 166  & 3 797  & 226   & 212 & 5,58\% \\
+			Lucene - Core        & 238 454 & 27 438 & 650   & 493 & 1,80\% \\
+			Solr                 & 145 004 & 14 889 & 161   & 131 & 0,88\% \\
+			Mahout               & 60 917  & 7 812  & 370   & 336 & 4,30\% \\
+			Apache Gora          & 11 621  & 2 236  & 11    & 11  & 0,49\% \\
+			Flume                & 40 956  & 4 791  & 115   & 107 & 2,23\% \\
+			Nutch                & 15 013  & 1 776  & 122   & 89  & 5,01\% \\
+			Apache Knox          & 25 857  & 3 359  & 23    & 22  & 0,65\% \\
+			Phoenix              & 102 397 & 12 909 & 345   & 246 & 1,91\% \\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+\end{table}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{OmÛwienie zebranych danych pomiarowych}
+
+\noindent Zebrane dane zawierajπ 54 kolumny. Pierwsza zawiera sygnaturÍ metody, kolejne 50 to metryki wymienione w~rozdziale \ref{metryki}. Sπ to wartoúci liczbowe typu zmiennoprzecinkowego. Kolejne kolumny to: \textit{loc} zawierajπca miarÍ wielkoúci metody (wartoúci liczbowe ca≥kowite), \textit{NumOfBugs} zawierajπca liczbÍ b≥ÍdÛw (wartoúci liczbowe ca≥kowite), \textit{Buggy} zawierajπca informacje o~tym czy metoda zawiera b≥πd czy nie (wartoúci \textit{1} lub \textit{0}). Øadna z~kolumn nie zawiera nieokreúlonych lub brakujπcych wartoúci.
+
+Zebrano dane z~29 projektÛw o~otwartych ürÛd≥ach, w~dwÛch wersjach kaødego projektu.
+
+\paragraph{Wymagania dla repozytorium danych.} Dane powinny byÊ zgromadzone w~miejscu, ktÛre umoøliwia ≥atwy dostÍp poprzez protokÛ≥ HTTP, bez uwierzytelniania lub logowania. Jest to istotne z~punktu widzenia wykorzystania narzÍdzi do analizy i~przetwarzania tych danych. Pliki danych powinny byÊ oznaczone sumami kontrolnymi aby by≥o moøliwe sprawdzenie poprawnoúci ich pobierania.
+
+\paragraph{Struktura danych i~zawartoúÊ zbioru.} ZbiÛr metryk zosta≥ zaprojektowany w~celu umoøliwienia przechowywania danych z~projektÛw rÛønego typu. Na najwyøszym poziomie zosta≥ podzielony na 2 grupy: projekty o~otwartym kodzie i~projekty w≥asnoúciowe (odpowiednio katalogi \textit{open source} i~\textit{proprietary}). Katalog na kolejny poziomie zagnieødøenia okreúla nazwÍ oprogramowania, a~wewnπtrz znajdujπ siÍ arkusze danych w~postaci plikÛw CSV. CSV (ang. \textit{Comma-separated values}) jest to plik tekstowy rozdzielany przecinkami. Pliki z~danymi sπ nazywane numerem/ nazwπ wydania. W~przypadku repozytoriÛw Git zazwyczaj jest to nazwa tagu. W~pierwszej linii kaødego pliku znajdujπ siÍ nag≥Ûwki kolumn. W~tym samym katalogu co plik CSV powinien znajdowaÊ siÍ plik z~sumπ kontrolnπ obliczonπ funkcjπ skrÛtu MD5. Plik z~sumπ kontrolnπ powinien mieÊ takπ samπ nazwÍ jak plik z~danymi, z~rozszerzeniem \textit{.md5}.
+
+Na rysunku \ref{struktura-zbioru-danych} przedstawiono ogÛlnπ strukturÍ zbioru danych wraz z~kilkoma przyk≥adowymi projektami.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics{diagrams/repozytorium-astcompare.pdf}
+	\caption{Struktura repozytorium metryk AstMetrics}
+	\label{struktura-zbioru-danych}
+\end{figure}
+

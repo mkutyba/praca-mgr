@@ -15,6 +15,13 @@ Arisholm E., Briand L.~C., Johannessen E.~B.
   evaluate fault prediction models.
 \newblock {\em Journal of Systems and Software}, 83(1):2--17, 2010.
 
+\bibitem{BCDG+07}
+Berthold M.~R., Cebron N., Dill F., Gabriel T.~R., K\"{o}tter T., Meinl T., Ohl
+  P., Sieb C., Thiel K., Wiswedel B.
+\newblock {KNIME}: The {K}onstanz {I}nformation {M}iner.
+\newblock W: {\em Studies in Classification, Data Analysis, and Knowledge
+  Organization (GfKL 2007)}. Springer, 2007.
+
 \bibitem{bevan2005facilitating}
 Bevan J., Whitehead~Jr E.~J., Kim S., Godfrey M.
 \newblock Facilitating software evolution research with kenyon.
@@ -81,6 +88,12 @@ Fluri B., Wursch M., PInzger M., Gall H.~C.
   change extraction.
 \newblock {\em Software Engineering, IEEE Transactions on}, 33(11):725--743,
   2007.
+
+\bibitem{gantz2012digital}
+Gantz J., Reinsel D.
+\newblock The digital universe in 2020: Big data, bigger digital shadows, and
+  biggest growth in the far east.
+\newblock {\em IDC iView: IDC Analyze the Future}, 2012.
 
 \bibitem{giger2012method}
 Giger E., D'Ambros M., Pinzger M., Gall H.~C.
@@ -205,6 +218,17 @@ Menzies T., Milton Z., Turhan B., Cukic B., Jiang Y., Bener A.
 \newblock Defect prediction from static code features: current results,
   limitations, new approaches.
 \newblock {\em Automated Software Engineering}, 17(4):375--407, 2010.
+
+\bibitem{mitka}
+Mitka P.
+\newblock Budowa modeli predykcji defektów w oparciu o metryki zmian na
+  poziomie metod.
+\newblock Praca magisterska, Politechnika Wroc³awska, 2014.
+
+\bibitem{63810}
+Morzy T.
+\newblock {\em Eksploracja danych}.
+\newblock Wydawnictwo Naukowe PWN, Warszawa, 2013.
 
 \bibitem{nguyen2010studying}
 Nguyen T.~H., Adams B., Hassan A.~E.

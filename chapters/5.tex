@@ -1,0 +1,20 @@
+\paragraph{Trudnoœci podczas realizacji pracy.} Podczas uruchamiania obliczeñ zaplanowanych do wykonania w ramach projektu, okaza³o siê, ¿e czas przetwarzania na œredniej klasy komputerze osobistym jest zdecydowanie zbyt d³ugi. Po wykonaniu czêœci obliczeñ i zebraniu danych z 6 projektów zdecydowano o przeniesieniu wykonania programu do chmury obliczeniowej. Uruchomiono instacjê maszyny wirtualnej w chmurze Windows Azure. Niezbêdne by³o uruchomienie instancji dysponuj¹cej odpowiedni¹ iloœci¹ pamiêci operacyjnej, przydzielono 14 GB pamiêci RAM, z czego 4 GB przeznaczono na przechowywanie plików na wirtualnym dysku RAM.
+
+Kolejnym wyzwaniem napotkanym w trakcie tworzenia rozwi¹zania by³o wykorzystanie wtyczek z pakietu DePress w œrodowisku KNIME, pomimo przeprowadzenia predykcji i obliczeñ statystycznych w œrodowisku R. Dziêki wykorzystaniu trybu wsadowego KNIME uzyskano zadowalaj¹cy rezultat, daj¹cy mo¿liwoœæ automatycznego przeprowadzenia obliczeñ. Wymagane do tego jest jednak zainstalowanie KNIME oraz wtyczek z pakietu DePress.
+
+
+
+\paragraph{Zagro¿enia dla wiarygodnoœci.} Istniej¹ zagro¿enia dla wiarygodnoœci przeprowadzonego badania. Metoda wyszukiwania b³êdów bazuje na zg³oszeniach w systemie kontroli wersji oraz opisach rewizji w systemie wersjonowania kodu. Od jakoœci tych danych zale¿y jakoœæ uzyskanych informacji o b³êdach w kodzie Ÿród³owym. Czêœæ b³êdów mog³a zostaæ Ÿle opisana przez co niemo¿liwe by³o dopasowanie rewizji do zg³oszonego b³êdu. Z drugiej strony czêœæ zg³oszonych b³êdów mo¿e nie byæ b³êdami, co tak¿e wp³ywa na niedoskona³oœæ zebranych danych.
+
+Filtrowanie danych wejœciowych tak¿e mo¿e byæ nieprecyzyjne. Opracowano rozi¹zanie bazuj¹ce na wy³¹czaniu okreœlonego jednego katalogu (razem z podkatalogami), co mo¿e byæ niewystarczaj¹ce ze wzglêdu na uk³ad zawartoœci niektórych repozytoriów.
+
+
+
+\paragraph{Podsumowanie.} Stworzone modele predykcji defektów na poziomie metod charakteryzuj¹ siê wysok¹ skutecznoœci¹. Dziêki wykorzystaniu du¿ej liczby metryk procesu oraz odpowiedniego algorytmu klasyfikacji, mo¿na znacz¹co ograniczyæ koszty przegl¹du kodu, co z~kolei pozwala na ograniczenie kosztów zapewnienia jakoœci w~procesie tworzenia oprogramowania. Uzyskane wyniki daj¹ podstawy do pozytywnej oceny stworzonych modeli predykcji. Dziêki zastosowaniu opracowanej metody w procesie wytwarzania oprogramowania, czas zaoszczêdzony na pe³nych przegl¹dach kodu, mo¿na przeznaczyæ na inne zadania realizowane przez zespó³ programistów i testerów.
+
+W ramach niniejszej pracy dyplomowej stworzono równie¿ wtyczkê KNIME s³u¿¹c¹ do wyliczenia metryk procesu AST (AstMetrics). Zbudowano te¿ repozytorium metryk oraz zebrano metryki z~29 projektów. Pozyskane dane mog¹ pos³u¿yæ do budowania i~ewaluacji nowych modeli predykcji w~celu uzyskania jeszcze lepszych rezultatów. Repozytorium metryk opublikowano pod adresem\\https://github.com/mkutyba/AstMetrics-dataset.
+
+
+
+\paragraph{Propozycja dalszych badañ.} Zauwa¿ono mo¿liwoœci dalszego rozwoju badania w celu osi¹gniêcia wiêkszej efektywnoœci. Mo¿na dokonaæ wstêpnej obróbki zmiennych wejœciowych, np. stosuj¹c metody nadpróbkowania lub podpróbkowania albo przefiltrowaæ predyktory wy³¹czaj¹c te, które maj¹ wariancjê blisk¹ zeru (sta³¹ wartoœæ), s¹ skorelowane, lub w inny sposób.
+

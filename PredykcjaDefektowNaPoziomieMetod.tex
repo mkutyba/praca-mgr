@@ -4,6 +4,10 @@
 \usepackage{graphicx}
 \usepackage{cite}
 \usepackage{xcolor}
+\usepackage{epstopdf}
+\usepackage{tablefootnote}
+\usepackage{siunitx}
+\usepackage{booktabs}
 
 % definicje kolorow
 \definecolor{ciemnoSzary}{rgb}{0.15,0.15,0.15}
@@ -26,12 +30,12 @@
 \author{Mateusz Kutyba}
 \advisor{dr hab. in¿. Lech Madeyski}
 \instituteLogo{logos/pwr}
-\slowaKluczowe{pierwsze\\drugie\\trzecie}
+\slowaKluczowe{predykcja defektów\\metryki oprogramowania\\oceny oparte na wysi³ku}
 
 \date{\number\the\year}
 
-% Wstawienie abstractu pracy
-\abstractSH{Bardzo krótkie streszczenie w którym powinno siê znaleŸæ omówienie tematu pracy i poruszanych terminów. Tekst ten nie mo¿e byæ zbyt d³ugi.}
+% Wstawienie streszczenia pracy
+\abstractSH{Przewidywanie b³êdów w oprogramowaniu z wykorzystaniem algorytmów uczenia maszynowego, na podstawie metryk oprogramowania i danych historycznych. \newline \newline}
 \abstractPL{Streszczenie po polsku}
 \abstractEN{Abctract in english}
 
@@ -41,24 +45,29 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Wstêp}
+\label{rozdzial1}
 \noindent
-\input{chapters/1wstep}
+\input{chapters/1}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Wprowadzenie}
+\chapter{Przegl¹d literatury}
+\label{rozdzial2}
 \noindent
-\input{chapters/2wprowadzenie}
+\input{chapters/2}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Omówienie infrastruktury pomiarowej}
+\label{rozdzial3}
 \noindent
-\input{chapters/3infrastruktura-pomiarowa}
+\input{chapters/3}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Modele predykcji i ich ewaluacja}
+\label{rozdzial4}
 \noindent
-\input{chapters/4modele}
+\input{chapters/4}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Podsumowanie i propozycja dalszych badañ}
+\chapter{Podsumowanie}
+\label{rozdzial5}
 \noindent
-\input{chapters/5podsumowanie}
+\input{chapters/5}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 

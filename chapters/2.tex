@@ -23,17 +23,92 @@ Przeszukano poni¿sze zbiory z~u¿yciem ustalonych wyra¿eñ, za pomoc¹ wyszukiwarek
 	\item ACM Digital Library,
 	\item Springer Link,
 	\item ISI Web of Science.
-	%\item Engineering Village
-	%\item Wiley Online Library
 \end{itemize}
 
 Wybrano te zbiory poniewa¿ pokrywaj¹ one wiêkszoœæ publikacji in¿ynierii oprogramowania oraz s¹ u¿ywane jako Ÿród³a w~innych przegl¹dach z~tej dziedziny \cite{hall2012systematic, riaz2009systematic}.
 
+
+
+W celu przygotowania listy wyra¿eñ u¿ytych do przeszukiwania zbiorów podjêto nastêpuj¹ce kroki:
+\begin{enumerate}
+	\item Przet³umaczenie pytañ na jêzyk angielski.
+		\begin{itemize}
+			\item What are the methods to predict defects on method level and what is their efficiency?
+			\item What are the possibilities to improve or extend existing methods?
+			\item What are the methods to extract source code changes on method level?
+		\end{itemize}
+	\item Wypisanie s³ów kluczowych dotycz¹cych pytañ badawczych.
+		\begin{itemize}
+			\item defect prediction, method level, efficiency, extract, source changes, code changes
+		\end{itemize}
+
+	\item Wypisanie synonimów i alternatywnych form.
+		\begin{itemize}
+			\item bug prediction, fault prediction, detection, fine granularity, fine-grained, performance, code metrics, process metrics, software evolution
+		\end{itemize}
+
+	\item Utworzenie form z gwiazdk¹ (*) zastêpuj¹cych liczbê pojedynczê i mnog¹ oraz alternatywne formy i koñcówki.
+		\begin{itemize}
+			\item bug, fault, defect*, predict*, detect*
+			\item method level, fine, grain*
+			\item efficien*, performance
+			\item code, process, metric*, change*, software, evolution
+		\end{itemize}
+
+	\item Wykonanie próbnego przeszukiwania a nastêpnie wybranie s³ów kluczowych ze znalezionych trafnych wyników (brano pod uwagê s³owa kluczowe oraz streszczenie).
+
+	\item Przygotowanie z³o¿onych zapytañ wykorzystuj¹c dostêpne operatory:
+		\begin{itemize}
+			\item {\bf IEEE Xplore}:
+				\begin{itemize}
+					\item ((bug OR fault OR defect*) AND (predict* OR detect*)) AND ((method NEAR level) OR (fine AND grain*))
+					\item ((code OR process) AND metric*) AND ((``Abstract":bug OR ``Abstract":fault OR ``Abstract":defect*) AND (``Abstract":predict* OR ``Abstract":detect*)) AND (``Abstract":efficien* OR ``Abstract":performance)
+					\item ((source NEAR code) AND change*) AND ((method NEAR level) OR (fine AND grain*))
+				\end{itemize}
+
+			\item {\bf Science Direct} (w kategorii Computer Science):
+				\begin{itemize}
+					\item title-abstr-key(((bug OR fault OR defect*) AND (predict* OR detect*)) AND ((method W/1 level) OR (fine W/1 grain*)))
+					\item title-abstr-key(((input AND data) OR ((code OR process) AND metric*)) AND ((bug OR fault OR defect*) AND (predict* OR detect*)) AND (efficien* OR performance))
+					\item title-abstr-key((source AND code AND change*) AND ((method AND level) OR (fine AND grain*)))
+				\end{itemize}
+
+			\item {\bf ACM Digital Library}:
+				\begin{itemize}
+					\item ((bug OR fault OR defect*) AND (predict* OR detect*)) AND ((method AND level) OR (fine AND grain*))
+					\item ((input AND data) OR ((code OR process) AND metric*)) AND ((bug OR fault OR defect*) AND (predict* OR detect*)) AND (efficien* OR performance)
+					\item (source AND code AND change*) AND ((method AND level) OR (fine AND grain*))
+				\end{itemize}
+
+			\item {\bf Springer Link} (w kategorii Computer Science):
+				\begin{itemize}
+					\item ((bug OR defect*) ONEAR predict*) AND ((method NEAR level) OR (fine NEAR grain*))
+					\item ((code OR process) NEAR metric*) AND ((bug OR defect*) ONEAR predict*) AND (efficien* OR performance)
+					\item (source NEAR code NEAR change*) AND ((method NEAR level) OR (fine NEAR grain*))
+				\end{itemize}
+
+			\item {\bf ISI Web of Science} (w kategorii Computer Science):
+				\begin{itemize}
+					\item ((bug OR defect*) NEAR/5 predict*) AND ((method NEAR/5 level) OR (fine NEAR/5 grain*))
+					\item ((code OR process) NEAR/5 metric*) AND ((bug OR defect*) NEAR/5 predict*) AND (efficien* OR performance)
+					\item (source NEAR/5 code NEAR/5 change*) AND ((method NEAR/5 level) OR (fine NEAR/5 grain*))
+				\end{itemize}
+		\end{itemize}
+\end{enumerate}
+
+
+
 \paragraph{Szara literatura.}
 
-Wstêpne przeszukiwanie wykaza³o niewielk¹ iloœæ Ÿróde³ œciœle odpowiadaj¹cych zagadnieniu predykcji defektów na niskim poziomie granulacji. Aby pokryæ znaczn¹ czêœæ szarej literatury zdecydowano, aby przeszukaæ nastêpuj¹ce Ÿród³a:
+Wstêpne przeszukiwanie wykaza³o niewielk¹ liczbê Ÿróde³ œciœle odpowiadaj¹cych zagadnieniu predykcji defektów na niskim poziomie granulacji. Aby pokryæ znaczn¹ czêœæ szarej literatury zdecydowano, aby przeszukaæ nastêpuj¹ce Ÿród³a:
 \begin{itemize}
 	\item Google Scholar.
+		\\U¿yto nastêpuj¹cych wyra¿eñ:
+		\begin{itemize}
+			\item (method AND level) AND (defect* AND predict*)
+			\item (fine AND grain*) AND (defect* AND predict*)
+		\end{itemize}
+		Dla ka¿dego z wyra¿eñ przejrzano pierwsze 100 wyników.
 	\item Lista odnoœników w~znalezionych Ÿród³ach pierwotnych.
 		\\Zgodnie z~metod¹ œnie¿nej kuli \cite{goodman1961snowball} przejrzano listy referencji Ÿróde³ pierwotnych w~celu odnalezienia dodatkowych istotnych (relewantnych) publikacji.
 	\item Inne publikacje autorów znalezionych Ÿróde³ pierwotnych.
@@ -162,7 +237,7 @@ Metryki mo¿na podzieliæ wed³ug ró¿nych kryeriów. Ze wzglêdu na typ artefaktu jak
 		\end{itemize}
 		\item LOC --- liczba linii kodu.
 	\end{itemize}
-	\item Metryki procesu (inaczej metryki zmian). Okreœlaj¹ zmiennoœæ atrybutu w~czasie. Oblicza siê je dla zadanych przedzia³ów czasowych. Niezbêdna do ich obliczenia jest historia projektu, któr¹ mo¿na uzyskaæ dziêki systemom kontroli wersji (jak SVN czy Git). Przyk³ady metryk procesu:
+	\item Metryki procesu (inaczej metryki zmian) \cite{madeyski2014process}. Okreœlaj¹ zmiennoœæ atrybutu w~czasie. Oblicza siê je dla zadanych przedzia³ów czasowych. Niezbêdna do ich obliczenia jest historia projektu, któr¹ mo¿na uzyskaæ dziêki systemom kontroli wersji (jak SVN czy Git). Przyk³ady metryk procesu:
 		\begin{itemize}
 			\item liczba modyfikacji (rewizji) pliku (ang. \textit{Number of Revisions}, NR),
 			\item liczba autorów zmieniaj¹cych plik (ang. \textit{Number of Distinct Commiters}, NDC),
@@ -207,7 +282,7 @@ Istniej¹ce badania wykaza³y, ¿e metryki procesu przewy¿szy³y metryki produktu w~
 	\item Na etapie zamkniêcia projektu --- testy integracyjne, testy akceptacyjne, testy operacyjne.
 \end{itemize}
 
-\noindent Jak wykazano w~\cite{arisholm2010systematic} koszty zapewnienia jakoœci s¹ prawie proporcjonalne do wielkoœci modu³u. Dlatego badacze bior¹ pod uwagê wysi³ek zwi¹zany z~dzia³aniami maj¹cymi na celu zapewnienie jakoœci \cite{rahman2011bugcache, koru2008theory, menzies2010defect}. Zmniejszenie wysi³ku i~kosztu zwi¹zanego z~zapewnieniem jakoœci to obecnie jeden z~g³ównych kierunków badañ \cite{hata2012bug}.
+\noindent Jak wykaza³ Arisholm i~in. w~\cite{arisholm2010systematic} koszty zapewnienia jakoœci s¹ prawie proporcjonalne do wielkoœci modu³u. Dlatego badacze bior¹ pod uwagê wysi³ek zwi¹zany z~dzia³aniami maj¹cymi na celu zapewnienie jakoœci \cite{rahman2011bugcache, koru2008theory, menzies2010defect}. Zmniejszenie wysi³ku i~kosztu zwi¹zanego z~zapewnieniem jakoœci to obecnie jeden z~g³ównych kierunków badañ \cite{hata2012bug}.
 
 Podstawowym celem pracy dyplomowej jest stworzenie narzêdzi w~postaci wtyczek do œrodowiska KNIME, s³u¿¹cych do gromadzenia metryk oprogramowania z~systemów kontroli wersji oraz zgromadzenie jak najwiêkszej iloœci metryk w~publicznym repozytorium. Nastêpnym krokiem jest stworzenie modelu (modeli) predykcji defektów oraz ich ewaluacja, bior¹c pod uwagê wysi³ek zwi¹zany z~zapewnieniem jakoœci oprogramowania. Stworzenie narzêdzi pozwalaj¹cych na zautomatyzowane gromadzenie metryk z~dostêpnych projektów (na przyk³ad open source) pozwoli rozszerzyæ publiczne zbiory danych. Dziêki temu bêdzie mo¿liwe wykorzystanie tych danych do tworzenia modeli predykcji defektów oprogramowania dziêki: wiêkszym zbiorom ucz¹cym; ewaluacji modeli na wiêkszych zbiorach danych.
 
@@ -221,7 +296,7 @@ Podstawowym celem pracy dyplomowej jest stworzenie narzêdzi w~postaci wtyczek do
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Systemy kontroli wersji jako Ÿród³o danych o~projektach}
 
-\noindent Jak wspomniano wczeœniej w~rozdziale \ref{rola-metryk} aby obliczyæ metryki procesu, konieczne jest uzyskanie historii projektu. Przegl¹d literatury pozwoli³ na wyodrêbnienie sposobów i~narzêdzi, które pozwalaj¹ na porównywanie ró¿nych wersji kodu Ÿród³owego. Jak wykazano w~\cite{kamei2010revisiting, posnett2011ecological, nguyen2010studying} predykcja na poziomie plików jest bardziej efektywna ni¿ na poziomie pakietów. Id¹c dalej w~kierunku uszczegó³owienia wyników predykcji, mo¿na przypuszczaæ, ¿e predykcja na poziomie metod by³aby skuteczniejsza ni¿ na poziomie plików. Badanie \cite{hata2012bug} wykaza³o, ¿e pliki zawieraj¹ce b³êdy zawieraj¹ prawie lub ponad 10 metod, natomiast tylko kilka metod zawiera b³êdy (mediana 1--2). Jest to nie tylko odpowiedŸ na pytanie czy predykcja na poziomie metod jest skuteczniejsza, ale równie¿ wskazanie przyczyny takiego stanu rzeczy. Jednak¿e aby w~pe³ni wykorzystaæ mo¿liwoœci ograniczenia kosztów jakoœci poprzez predykcjê na poziomie metod, potrzebne s¹ skuteczne modele, dostarczaj¹ce wiarygodnych wyników.
+\noindent Jak wspomniano wczeœniej w~rozdziale \ref{rola-metryk} aby obliczyæ metryki procesu, konieczne jest uzyskanie historii projektu. Przegl¹d literatury pozwoli³ na wyodrêbnienie sposobów i~narzêdzi, które pozwalaj¹ na porównywanie ró¿nych wersji kodu Ÿród³owego. Jak wykaza³ Kamei i~in. w~\cite{kamei2010revisiting, posnett2011ecological, nguyen2010studying} predykcja na poziomie plików jest bardziej efektywna ni¿ na poziomie pakietów. Id¹c dalej w~kierunku uszczegó³owienia wyników predykcji, mo¿na przypuszczaæ, ¿e predykcja na poziomie metod by³aby skuteczniejsza ni¿ na poziomie plików. Badanie \cite{hata2012bug} wykaza³o, ¿e pliki zawieraj¹ce b³êdy zawieraj¹ prawie lub ponad 10 metod, natomiast tylko kilka metod zawiera b³êdy (mediana 1--2). Jest to nie tylko odpowiedŸ na pytanie czy predykcja na poziomie metod jest skuteczniejsza, ale równie¿ wskazanie przyczyny takiego stanu rzeczy. Jednak¿e aby w~pe³ni wykorzystaæ mo¿liwoœci ograniczenia kosztów jakoœci poprzez predykcjê na poziomie metod, potrzebne s¹ skuteczne modele, dostarczaj¹ce wiarygodnych wyników.
 
 Ze wzglêdu na powy¿sze zale¿noœci, podjêto decyzjê o~prowadzeniu dalszych prac w~kierunku budowy modeli predykcji na poziomie metod. Poni¿ej wypisano techniki porównywania kodu Ÿród³owego na poziomie metod.
 \begin{itemize}

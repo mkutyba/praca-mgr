@@ -1,4 +1,4 @@
-Badania zgodnie z~za³o¿eniami przeprowadzono w~œrodowisku KNIME rozszerzonym o~wtyczki z~DePress. Dodatkowo w~KNIME u¿yto algorytmów klasyfikacji z~pakietu Weka.
+Badania zgodnie z~za³o¿eniami przeprowadzono w~œrodowisku R. Do zebrania danych z~projektów u¿yto œrodowiska KNIME rozszerzonego o~wtyczki z~DePress.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -209,7 +209,7 @@ Dzia³anie wtyczki obrazuje rysunek \ref{ast-metrics-process}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Gromadzenie metryk}
 
-\noindent Do trenowania i~oceny algorytmów klasyfikacji czêsto stosuje siê walidacjê krzy¿ow¹, polegaj¹c¹ na podziale zbioru danych na dwa podzbiory --- treningowy i~testowy --- a~nastêpnie wykorzystaniu ich zgodnie z~przeznaczeniem. W~niniejszej pracy zastosowano inne podejœcie, polegaj¹ce na wykorzystaniu dwóch niezale¿nych zbiorów danych z~dwóch ró¿nych wydañ oprogramowania. Metryki wersji A~pos³u¿y³y jako zbiór treningowy a~metryki wersji B~jako zbiór testowy. Zalet¹ takiego podejœcia jest lepsze dopasowanie do rzeczywistych warunków wystêpuj¹cych w~procesie wytwarzania oprogramowania. W~tabeli \ref{wersje} zawarto informacje o~przebadanym oprogramowaniu wraz z~oznaczeniami wersji A~i~B. Metryki zosta³y wyliczone z~u¿yciem wtyczki AstMetrics. Wprowadzono równie¿ dodatkowo¹ metrykê pomocnicz¹ LOC (ang. \textit{ang. Lines of code}) - liczba linii kodu.
+\noindent Do trenowania i~oceny algorytmów klasyfikacji czêsto stosuje siê walidacjê krzy¿ow¹, polegaj¹c¹ na podziale zbioru danych na dwa podzbiory --- treningowy i~testowy --- a~nastêpnie wykorzystaniu ich zgodnie z~przeznaczeniem. W~niniejszej pracy zastosowano inne podejœcie, polegaj¹ce na wykorzystaniu dwóch niezale¿nych zbiorów danych z~dwóch ró¿nych wydañ oprogramowania. Metryki wersji A~pos³u¿y³y jako zbiór treningowy a~metryki wersji B~jako zbiór testowy. Zalet¹ takiego podejœcia jest lepsze dopasowanie do rzeczywistych warunków wystêpuj¹cych w~procesie wytwarzania oprogramowania. W~tabeli \ref{wersje} zawarto informacje o~przebadanym oprogramowaniu wraz z~oznaczeniami wersji A~i~B. Metryki zosta³y wyliczone z~u¿yciem wtyczki AstMetrics. Wprowadzono równie¿ dodatkowo¹ metrykê pomocnicz¹ LOC (ang. \textit{ang. Lines of code}) --- liczba linii kodu.
 
 \begin{table}[htbp]
 	\small
@@ -269,7 +269,7 @@ Dzia³anie wtyczki obrazuje rysunek \ref{ast-metrics-process}.
 	\item Wylistowanie wszystkich metod wchodz¹cych w~sk³ad wydanej wersji oprogramowania.
 	\item Pobranie historii metod za pomoc¹ AstMetrics od daty wydania wersji do daty koñcowej projektu.
 	\item Znalezienie rewizji naprawiaj¹cych b³¹d.
-	\item Porównanie daty naprawienia b³êdu z~dat¹ ustawion¹ w~systemie œledzenia zagadnieñ i~wyeliminowanie niezgodnych wpisów.
+	\item Porównanie daty naprawienia b³êdu z~dat¹ ustawion¹ w~systemie œledzenia zagadnieñ i~wyeliminowanie niezgodnych wpisów. Niezgodny wpis to taki, który w~systemie œledzenia zagadnieñ ma przypisan¹ inn¹ datê naprawienia b³êdu ni¿ data rewizji w~repozytorium. Za³o¿ono tolerancjê wynosz¹c¹ 7~dni, poniewa¿ b³¹d mog³ zostaæ oznaczony jako rozwi¹zany z~pewnym opóŸnieniem.
 	\item Zliczenie unikalnych numerów b³êdu dla danej metody i~zapisanie wartoœci jako liczba b³êdów.
 	\item Oznaczenie metod, które zosta³y zmienione w~commitach naprawiaj¹cych b³¹d jako metod zawieraj¹cych b³¹d (\textit{1}).
 	\item Oznaczenie pozosta³ych metod jako nie zawieraj¹cych b³êdu (\textit{0}).
@@ -295,8 +295,8 @@ W tabeli \ref{wielkosc-projektow} zebrano dane dotycz¹ce wielkoœci projektów ora
 			\toprule
 			\multirow{2}{*}{\bf Nazwa projektu} &
 			\multirow{2}{*}{\bf LOC} &
-			\bf Iloœæ &
-			\bf Iloœæ &
+			\bf Liczba &
+			\bf Liczba &
 			\bf B³êdnych &
 			\bf Udzia³
 			\\
@@ -358,7 +358,7 @@ Na rysunku \ref{struktura-zbioru-danych} przedstawiono ogóln¹ strukturê zbioru d
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics{diagrams/repozytorium-astcompare.pdf}
+	\includegraphics[width=0.45\textwidth]{diagrams/repozytorium-astcompare.pdf}
 	\caption{Struktura repozytorium metryk AstMetrics}
 	\label{struktura-zbioru-danych}
 \end{figure}

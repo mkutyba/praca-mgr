@@ -6,7 +6,7 @@ Predykcja defektów oprogramowania wykorzystuje techniki eksploracji danych, g³ów
 
 Gromadzenie danych (metryk) z~projektów jest czasoch³onne, wymaga du¿o pracy --- pobierania lub kopiowania projektów, mocy obliczeniowej do wyliczenia metryk. Potrzebne jest stworzenie uniwersalnych rozwi¹zañ s³u¿¹cych do tego celu oraz nastawienie na mo¿liwoœæ rozszerzania zestawu narzêdzi, które mog¹ byæ ze sob¹ dowolnie zestawiane. Te wymagania spe³nia platforma DePress \cite{madeyski2014software}, która jest rozwijana przy udziale studentów i~pracowników Politechniki Wroc³awskiej oraz pracowników Capgemini Polska. Wiêcej informacji o~DePress zawarto w~rozdziale \ref{depress}.
 
-Wstêpne przeszukiwanie literatury wykaza³o niewielk¹ iloœæ Ÿróde³ œciœle odpowiadaj¹cych zagadnieniu predykcji defektów na niskim poziomie granulacji. Jest to g³ówny kierunek tych badañ a~ich celem jest przede wszystkim opracowanie nowego modelu, który mia³by s³u¿yæ do efektywnego wskazywania miejsc w~oprogramowaniu, w~których znajduj¹ siê b³êdy. Pozwololi³oby to na ograniczenie iloœci pracy potrzebnej do przejrzenia krytycznych miejsc i~naprawienia b³êdów.
+Wstêpne przeszukiwanie literatury wykaza³o niewielk¹ liczbê Ÿróde³ œciœle odpowiadaj¹cych zagadnieniu predykcji defektów na niskim poziomie granulacji. Jest to g³ówny kierunek tych badañ a~ich celem jest przede wszystkim opracowanie nowego modelu, który mia³by s³u¿yæ do efektywnego wskazywania miejsc w~oprogramowaniu, w~których znajduj¹ siê b³êdy. Pozwololi³oby to na ograniczenie iloœci pracy potrzebnej do przejrzenia krytycznych miejsc i~naprawienia b³êdów.
 
 
 
@@ -33,7 +33,7 @@ Wstêpne przeszukiwanie literatury wykaza³o niewielk¹ iloœæ Ÿróde³ œciœle odpowia
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Przeznaczenie narzêdzi}
 
-\noindent Narzêdzia stworzone w~ramach pracy dyplomowej wchodz¹ w~sk³ad platformy (ang. \textit{framework}) DePress\footnote{http://depress.io} (\textit{Defect Prediction in Software Systems}). Jest to rozszerzalna platforma pozwalaj¹ca na budowanie przep³ywu pracy (ang. \textit{workflow}) w~sposób graficzny, dziêki temu, ¿e jest oparta na projekcie KNIME. G³ównym celem DePress jest wspieranie analizy empirycznej oprogramowania. Pozwala na zbieranie, ³¹czenie i~analizê danych z~ró¿nych Ÿróde³, jak repozytoria oprogramowania czy metryki.
+\noindent Narzêdzia stworzone w~ramach pracy dyplomowej wchodz¹ w~sk³ad platformy (ang. \textit{framework}) DePress\footnote{http://depress.io} (\textit{Defect Prediction in Software Systems})\cite{madeyski2014software}. Jest to rozszerzalna platforma pozwalaj¹ca na budowanie przep³ywu pracy (ang. \textit{workflow}) w~sposób graficzny, dziêki temu, ¿e jest oparta na projekcie KNIME. G³ównym celem DePress jest wspieranie analizy empirycznej oprogramowania. Pozwala na zbieranie, ³¹czenie i~analizê danych z~ró¿nych Ÿróde³, jak repozytoria oprogramowania czy metryki.
 
 
 
@@ -62,7 +62,7 @@ Wstêpne przeszukiwanie literatury wykaza³o niewielk¹ iloœæ Ÿróde³ œciœle odpowia
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Metoda oceny}
 
-\noindent Podstawow¹ ocen¹ efektywnoœci tworzonych modeli by³a ocena oparta na wysi³ku (ang. \textit{effort-based evaluation}). Dla ka¿dego modelu zosta³a stworzona krzywa efektywnoœci, przyk³ad takiej krzywej przedstawia rysunek \ref{example-chart}. Porównanie efektywnoœci modeli polega przede wszystkim na porównaniu procentowej iloœci b³êdów znalezionych w~okreœlonej iloœci kodu. Przyjêto, ¿ê wartoœci¹ graniczn¹ kodu poddanego inspekcji bêdzie 20\%. Taka sama wartoœæ jest stosowana w~innych badaniach. W~przedstawionym przyk³adzie dokonuj¹c przegl¹du 20\% kodu, znajdzie siê w~nim 30\% encji z~defektami (w~przypadku tych badañ s¹ to metody).
+\noindent Podstawow¹ ocen¹ efektywnoœci tworzonych modeli by³a ocena oparta na wysi³ku (ang. \textit{effort-based evaluation}). Dla ka¿dego modelu zosta³a stworzona krzywa efektywnoœci, przyk³ad takiej krzywej przedstawia rysunek \ref{example-chart}. Porównanie efektywnoœci modeli polega przede wszystkim na porównaniu procentowej liczbie b³êdów znalezionych w~okreœlonej iloœci kodu. Przyjêto, ¿ê wartoœci¹ graniczn¹ kodu poddanego inspekcji bêdzie 20\%. Taka sama wartoœæ jest stosowana w~innych badaniach, m.in. \cite{arisholm2010systematic}, \cite{hata2012bug}, \cite{kamei2010revisiting}, \cite{mende2010effort}, \cite{rahman2011bugcache}. W~przedstawionym przyk³adzie dokonuj¹c przegl¹du 20\% kodu, znajdzie siê w~nim 30\% encji z~defektami (w~przypadku tych badañ s¹ to metody).
 
 \begin{figure}[htbp]
 	\caption{Wykres krzywej efektywnoœci}

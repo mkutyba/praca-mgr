@@ -194,6 +194,12 @@ Liaw A., Wiener M.
 \newblock Classification and regression by randomforest.
 \newblock {\em R news}, 2(3):18--22, 2002.
 
+\bibitem{madeyski2014process}
+Madeyski L., Jureczko M.
+\newblock Which process metrics can significantly improve defect prediction
+  models? an empirical study.
+\newblock {\em Software Quality Journal}, 23(3):393--422, 2014.
+
 \bibitem{madeyski2014software}
 Madeyski L., Majchrzak M.
 \newblock Software measurement and defect prediction with depress extensible

@@ -2,10 +2,13 @@
 	"folders":
 	[
 		{
-			"path": "."
+			"path": "/D/dyplom mgr/praca latex"
 		},
 		{
-			"path": "../slr - latex"
+			"path": "/D/dyplom mgr/slr - latex"
+		},
+		{
+			"path": "/D/dyplom mgr/workspace knime/ic-depress-mkutyba/ic-depress-mg-astmetrics"
 		}
 	]
 }
